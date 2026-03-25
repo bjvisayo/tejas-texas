@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tejas Trucking & Construction L.L.C. | Houston, TX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy:#0d1f3c; --navy-mid:#132848; --navy-light:#1a3560; --navy-pale:#e8edf5;
+  --orange:#e85d1a; --orange-light:#f07040; --orange-dark:#c44a0f;
+  --white:#ffffff; --off:#f5f6f8; --g1:#f0f1f4; --g2:#d8dbe3; --g3:#9aa0b0; --g4:#5a6070;
+  --dark:#1a1e28;
+  --fd:'Rajdhani',sans-serif; --fb:'Source Sans 3',sans-serif;
+  --r:3px;
+}
+html{scroll-behavior:smooth;}
+body{font-family:var(--fb);background:var(--white);color:var(--dark);overflow-x:hidden;}
+img{display:block;width:100%;object-fit:cover;}
+.page{display:none;} .page.active{display:block;}
+.container{max-width:1200px;margin:0 auto;padding:0 2.5rem;}
+
+/* UTILS */
+.lbl{display:inline-flex;align-items:center;gap:10px;font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:.8rem;}
+.lbl::before{content:'';width:24px;height:2px;background:var(--orange);flex-shrink:0;}
+.stitle{font-family:var(--fd);font-size:clamp(2rem,4vw,3.2rem);font-weight:700;line-height:1.05;color:var(--navy);letter-spacing:.02em;}
+.stitle.w{color:var(--white);}
+
+.btn-o{display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:var(--white);padding:.85rem 2rem;border-radius:var(--r);font-family:var(--fd);font-size:1rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border:2px solid var(--orange);cursor:pointer;transition:all .2s;}
+.btn-o:hover{background:var(--orange-dark);border-color:var(--orange-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,93,26,.3);}
+.btn-n{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--navy);padding:.85rem 2rem;border-radius:var(--r);font-family:var(--fd);font-size:1rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border:2px solid var(--navy);cursor:pointer;transition:all .2s;}
+.btn-n:hover{background:var(--navy);color:var(--white);}
+.btn-w{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--white);padding:.85rem 2rem;border-radius:var(--r);font-family:var(--fd);font-size:1rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border:2px solid rgba(255,255,255,.4);cursor:pointer;transition:all .2s;}
+.btn-w:hover{border-color:var(--orange);color:var(--orange);}
+.btn-wh{display:inline-flex;align-items:center;gap:8px;background:var(--white);color:var(--orange);padding:.85rem 2rem;border-radius:var(--r);font-family:var(--fd);font-size:1rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border:2px solid var(--white);cursor:pointer;transition:all .2s;}
+.btn-wh:hover{background:transparent;color:var(--white);}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--navy);height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;border-bottom:3px solid var(--orange);box-shadow:0 4px 24px rgba(13,31,60,.25);}
+.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;cursor:pointer;}
+.logo-mark{width:42px;height:42px;background:var(--orange);border-radius:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.logo-mark svg{width:26px;height:26px;}
+.logo-t1{font-family:var(--fd);font-size:1.2rem;font-weight:700;color:var(--white);letter-spacing:.06em;text-transform:uppercase;line-height:1.2;}
+.logo-t2{font-family:var(--fb);font-size:.68rem;color:rgba(255,255,255,.5);letter-spacing:.12em;text-transform:uppercase;font-weight:500;}
+.nav-center{display:flex;align-items:center;}
+.nl{font-family:var(--fb);font-size:.82rem;font-weight:600;color:rgba(255,255,255,.72);letter-spacing:.08em;text-transform:uppercase;padding:0 1.1rem;height:72px;display:flex;align-items:center;border-bottom:3px solid transparent;margin-bottom:-3px;transition:color .2s,border-color .2s;cursor:pointer;background:none;border-top:none;border-left:none;border-right:none;text-decoration:none;}
+.nl:hover,.nl.active{color:var(--white);border-bottom-color:var(--orange);}
+.nav-cta{background:var(--orange);color:var(--white);padding:.6rem 1.4rem;border-radius:var(--r);font-family:var(--fd);font-size:.9rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border:2px solid var(--orange);cursor:pointer;transition:background .2s;display:flex;align-items:center;gap:6px;}
+.nav-cta:hover{background:var(--orange-dark);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
+.hamburger span{width:24px;height:2px;background:white;border-radius:2px;}
+.mob-menu{display:none;position:fixed;top:72px;left:0;right:0;background:var(--navy-mid);z-index:199;flex-direction:column;border-bottom:3px solid var(--orange);box-shadow:0 20px 40px rgba(0,0,0,.3);}
+.mob-menu.open{display:flex;}
+.mob-link{font-family:var(--fb);font-size:.9rem;font-weight:600;color:rgba(255,255,255,.8);text-transform:uppercase;letter-spacing:.1em;padding:1rem 2rem;border-bottom:1px solid rgba(255,255,255,.07);cursor:pointer;background:none;border-left:none;border-right:none;border-top:none;text-align:left;transition:color .2s,background .2s;}
+.mob-link:hover{color:var(--orange);background:rgba(232,93,26,.08);}
+
+/* PAGE BANNER */
+.pb{height:260px;position:relative;display:flex;align-items:flex-end;overflow:hidden;margin-top:72px;}
+.pb-bg{position:absolute;inset:0;background-size:cover;background-position:center;}
+.pb-ov{position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,31,60,.92) 0%,rgba(13,31,60,.65) 100%);}
+.pb-content{position:relative;z-index:2;padding:0 2.5rem 2.5rem;max-width:1200px;margin:0 auto;width:100%;}
+.bc{font-size:.75rem;color:rgba(255,255,255,.5);margin-bottom:.4rem;letter-spacing:.1em;text-transform:uppercase;}
+.bc span{color:var(--orange);}
+.pb-title{font-family:var(--fd);font-size:clamp(2rem,5vw,3.5rem);font-weight:700;color:var(--white);line-height:1;letter-spacing:.03em;text-transform:uppercase;}
+.pb-acc{color:var(--orange);}
+
+/* HERO */
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;margin-top:72px;}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(105deg,rgba(13,31,60,.96) 0%,rgba(13,31,60,.80) 52%,rgba(13,31,60,.6) 100%),url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1800&q=80') center/cover no-repeat;animation:hzoom 14s ease-out both;}
+@keyframes hzoom{from{transform:scale(1.06);}to{transform:scale(1);}}
+.hero-stripe{position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(to bottom,var(--orange),var(--orange-dark));}
+.hero-grid{position:relative;z-index:2;width:100%;max-width:1200px;margin:0 auto;padding:5rem 2.5rem;display:grid;grid-template-columns:1fr 400px;gap:5rem;align-items:center;}
+.hero-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(232,93,26,.15);border:1px solid rgba(232,93,26,.35);color:#f08050;padding:.35rem .9rem;border-radius:var(--r);font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin-bottom:1.4rem;}
+.hero-ey::before{content:'';width:5px;height:5px;background:var(--orange);border-radius:50%;}
+.hero-title{font-family:var(--fd);font-weight:700;text-transform:uppercase;font-size:clamp(3rem,5.5vw,5rem);line-height:.98;color:var(--white);letter-spacing:.01em;margin-bottom:1.4rem;animation:fup .8s .1s both;}
+.hero-title .acc{color:var(--orange);}
+@keyframes fup{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+.hero-sub{font-size:1.05rem;color:rgba(255,255,255,.68);font-weight:300;line-height:1.75;max-width:460px;margin-bottom:2.2rem;animation:fup .8s .25s both;}
+.hero-acts{display:flex;gap:1rem;flex-wrap:wrap;animation:fup .8s .4s both;}
+.hero-stats{display:flex;gap:2.5rem;margin-top:3rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,.12);animation:fup .8s .5s both;}
+.hs-num{font-family:var(--fd);font-size:2.4rem;font-weight:700;color:var(--orange);line-height:1;}
+.hs-lbl{font-size:.72rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.1em;margin-top:3px;}
+
+/* FORM */
+.hform{background:var(--white);border-radius:var(--r);box-shadow:0 30px 80px rgba(13,31,60,.45);border-top:5px solid var(--orange);padding:2.2rem;animation:fup .8s .35s both;}
+.fhead{font-family:var(--fd);font-size:1.5rem;font-weight:700;color:var(--navy);text-transform:uppercase;margin-bottom:.25rem;}
+.fsub{font-size:.8rem;color:var(--g3);margin-bottom:1.6rem;}
+.fg{margin-bottom:.9rem;}
+.fg label{display:block;font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--g4);margin-bottom:.35rem;}
+.fg input,.fg select,.fg textarea{width:100%;padding:.7rem .9rem;border:1.5px solid var(--g2);border-radius:var(--r);font-family:var(--fb);font-size:.88rem;color:var(--dark);background:var(--off);outline:none;transition:border-color .2s,background .2s;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--orange);background:var(--white);}
+.fg textarea{resize:none;height:85px;}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;}
+.fsub-btn{width:100%;margin-top:.3rem;padding:.9rem;background:var(--orange);color:white;border:none;font-family:var(--fd);font-size:1.05rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;border-radius:var(--r);cursor:pointer;transition:background .2s,transform .15s;}
+.fsub-btn:hover{background:var(--orange-dark);transform:translateY(-1px);}
+.f-ok{display:none;background:#e6f4ea;color:#2e7d32;padding:.9rem;border-radius:var(--r);font-size:.85rem;text-align:center;margin-top:.5rem;}
+
+/* TRUST */
+.trust{background:var(--navy);padding:1.6rem 2.5rem;}
+.trust-in{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;}
+.ti{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.7);font-size:.8rem;font-weight:500;}
+.ti-ic{width:34px;height:34px;border-radius:var(--r);background:rgba(232,93,26,.15);border:1px solid rgba(232,93,26,.3);display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;}
+
+/* ABOUT STRIP */
+.astrip{padding:6rem 2.5rem;background:var(--off);}
+.astrip-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.aimg-w{position:relative;}
+.aimg-w img{border-radius:var(--r);height:420px;box-shadow:0 20px 60px rgba(13,31,60,.18);}
+.abadge{position:absolute;bottom:-20px;right:-20px;background:var(--orange);color:var(--white);padding:1.4rem 1.6rem;border-radius:var(--r);text-align:center;box-shadow:0 8px 32px rgba(13,31,60,.12);}
+.abadge-n{font-family:var(--fd);font-size:2.8rem;font-weight:700;line-height:1;}
+.abadge-t{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;opacity:.9;}
+.abody{font-size:1rem;color:var(--g4);line-height:1.8;margin:1.2rem 0 2rem;}
+.achecks{list-style:none;margin-bottom:2rem;}
+.achecks li{display:flex;align-items:center;gap:10px;font-size:.9rem;font-weight:500;color:var(--dark);padding:.45rem 0;border-bottom:1px solid var(--g1);}
+.achecks li::before{content:'✓';color:var(--orange);font-weight:700;font-size:1rem;flex-shrink:0;}
+
+/* SERVICES PREVIEW */
+.sprev{padding:6rem 2.5rem;background:var(--white);}
+.sprev-hd{max-width:1200px;margin:0 auto 3.5rem;display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:3rem;}
+.sprev-desc{font-size:.95rem;color:var(--g4);line-height:1.8;}
+.sp-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--g2);}
+.spc{background:var(--white);padding:2.5rem 2rem;position:relative;overflow:hidden;cursor:pointer;transition:transform .25s;}
+.spc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+.spc:hover::after{transform:scaleX(1);}
+.spc:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(13,31,60,.12);z-index:1;}
+.spc-icon{font-size:2.2rem;margin-bottom:1rem;}
+.spc-name{font-family:var(--fd);font-size:1.3rem;font-weight:700;color:var(--navy);text-transform:uppercase;margin-bottom:.5rem;}
+.spc-text{font-size:.85rem;color:var(--g3);line-height:1.7;}
+.spc-lnk{display:inline-flex;align-items:center;gap:5px;margin-top:1rem;font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--orange);cursor:pointer;text-decoration:none;background:none;border:none;font-family:var(--fb);transition:gap .2s;}
+.spc-lnk:hover{gap:9px;}
+
+/* WHY US */
+.why{padding:6rem 2.5rem;background:var(--navy);position:relative;overflow:hidden;}
+.why::before{content:'';position:absolute;right:-100px;top:-100px;width:500px;height:500px;border-radius:50%;border:80px solid rgba(232,93,26,.06);}
+.why-in{max-width:1200px;margin:0 auto;}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3.5rem;}
+.wcard{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2rem 1.5rem;border-radius:var(--r);text-align:center;transition:border-color .25s,transform .25s;}
+.wcard:hover{border-color:var(--orange);transform:translateY(-4px);}
+.wc-num{font-family:var(--fd);font-size:2.8rem;font-weight:700;color:var(--orange);line-height:1;margin-bottom:.3rem;}
+.wc-lbl{font-family:var(--fd);font-size:1rem;font-weight:600;color:var(--white);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem;}
+.wc-desc{font-size:.8rem;color:rgba(255,255,255,.45);line-height:1.65;}
+
+/* REVIEWS PREVIEW */
+.rprev{padding:6rem 2.5rem;background:var(--g1);}
+.rprev-in{max-width:1200px;margin:0 auto;}
+.rprev-hd{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1rem;}
+.rp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.rc{background:var(--white);padding:2rem;border-radius:var(--r);box-shadow:0 2px 12px rgba(13,31,60,.08);border-top:4px solid var(--orange);transition:transform .25s,box-shadow .25s;}
+.rc:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(13,31,60,.12);}
+.rc-stars{color:var(--orange);font-size:.9rem;letter-spacing:3px;margin-bottom:1rem;}
+.rc-text{font-size:.88rem;color:var(--g4);line-height:1.75;font-style:italic;margin-bottom:1.5rem;}
+.rc-auth{display:flex;align-items:center;gap:12px;}
+.rc-av{width:40px;height:40px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-weight:700;color:var(--white);font-size:1rem;flex-shrink:0;}
+.rc-name{font-weight:600;font-size:.85rem;color:var(--dark);}
+.rc-loc{font-size:.72rem;color:var(--g3);}
+
+/* CTA BAND */
+.ctab{padding:5rem 2.5rem;background:var(--orange);position:relative;overflow:hidden;}
+.ctab::before{content:'';position:absolute;right:-80px;top:-80px;width:350px;height:350px;border-radius:50%;background:rgba(255,255,255,.08);}
+.ctab-in{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:3rem;flex-wrap:wrap;position:relative;z-index:1;}
+.ctab-title{font-family:var(--fd);font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--white);text-transform:uppercase;line-height:1.05;}
+.ctab-sub{font-size:1rem;color:rgba(255,255,255,.8);margin-top:.5rem;}
+.ctab-btns{display:flex;gap:1rem;flex-wrap:wrap;flex-shrink:0;}
+
+/* FOOTER */
+footer{background:var(--navy);padding:4rem 2.5rem 2rem;}
+.foot-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem;}
+.fl1{font-family:var(--fd);font-size:1.4rem;font-weight:700;color:var(--white);text-transform:uppercase;letter-spacing:.05em;}
+.fl1 span{color:var(--orange);}
+.fl2{font-size:.7rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.14em;margin-bottom:1rem;}
+.ftag{font-size:.82rem;color:rgba(255,255,255,.4);line-height:1.75;margin-bottom:1.5rem;}
+.fcl{display:flex;align-items:center;gap:8px;font-size:.82rem;color:rgba(255,255,255,.55);margin-bottom:.4rem;}
+.fcl span{color:var(--orange);font-weight:600;}
+.fcol-t{font-family:var(--fd);font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--white);margin-bottom:1.2rem;padding-bottom:.6rem;border-bottom:1px solid rgba(255,255,255,.08);}
+.flinks{list-style:none;}
+.flinks li{margin-bottom:.6rem;}
+.flinks a,.flinks button{font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;background:none;border:none;cursor:pointer;padding:0;font-family:var(--fb);transition:color .2s;}
+.flinks a:hover,.flinks button:hover{color:var(--orange);}
+.foot-bot{max-width:1200px;margin:0 auto;padding-top:2rem;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.fcopy{font-size:.72rem;color:rgba(255,255,255,.25);}
+
+/* SERVICES PAGE */
+.svpage{padding:5rem 2.5rem;background:var(--off);}
+.svpage-in{max-width:1200px;margin:0 auto;}
+.svc-list{display:flex;flex-direction:column;gap:2px;background:var(--g2);margin-top:2rem;}
+.svc-row{display:grid;grid-template-columns:80px 1fr auto;align-items:center;gap:2.5rem;background:var(--white);padding:2.5rem;transition:background .2s;}
+.svc-row:hover{background:var(--off);}
+.svc-n{font-family:var(--fd);font-size:3rem;font-weight:700;color:var(--navy-pale);line-height:1;}
+.svc-name{font-family:var(--fd);font-size:1.6rem;font-weight:700;color:var(--navy);text-transform:uppercase;margin-bottom:.4rem;}
+.svc-desc{font-size:.9rem;color:var(--g4);line-height:1.75;max-width:600px;}
+.svc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:.8rem;}
+.svc-tag{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:var(--navy-pale);color:var(--navy);padding:.25rem .7rem;border-radius:2px;}
+.svc-icon{font-size:2.5rem;flex-shrink:0;}
+.svc-cta{margin-top:4rem;background:var(--navy);border-radius:var(--r);padding:3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
+.svc-cta-t{font-family:var(--fd);font-size:1.8rem;font-weight:700;color:var(--white);text-transform:uppercase;}
+.svc-cta-s{font-size:.9rem;color:rgba(255,255,255,.55);margin-top:.3rem;}
+
+/* GALLERY PAGE */
+.galpage{padding:5rem 2.5rem;background:var(--off);}
+.galpage-in{max-width:1200px;margin:0 auto;}
+.gal-filters{display:flex;gap:.5rem;flex-wrap:wrap;margin:2rem 0 3rem;}
+.gf{font-family:var(--fb);font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.55rem 1.2rem;border-radius:var(--r);border:1.5px solid var(--g2);background:var(--white);color:var(--g4);cursor:pointer;transition:all .2s;}
+.gf.active,.gf:hover{background:var(--navy);color:var(--white);border-color:var(--navy);}
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.gi{position:relative;overflow:hidden;border-radius:var(--r);cursor:pointer;}
+.gi img{height:260px;transition:transform .5s,filter .3s;filter:brightness(.9) saturate(.95);}
+.gi:nth-child(4n+1) img{height:340px;}
+.gi:hover img{transform:scale(1.06);filter:brightness(1) saturate(1);}
+.gi-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,31,60,.75) 0%,transparent 55%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:1.2rem;}
+.gi:hover .gi-ov{opacity:1;}
+.gi-cap{color:var(--white);font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;}
+
+/* ABOUT PAGE */
+.abpage{background:var(--white);}
+.ab-main{padding:5rem 2.5rem;}
+.ab-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.ab-img img{height:520px;border-radius:var(--r);box-shadow:0 20px 60px rgba(13,31,60,.18);}
+.ab-div{width:48px;height:3px;background:var(--orange);margin:1.5rem 0;}
+.ab-p{font-size:.95rem;color:var(--g4);line-height:1.85;margin-bottom:1rem;}
+.ab-vals{padding:5rem 2.5rem;background:var(--navy);}
+.av-in{max-width:1200px;margin:0 auto;}
+.av-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;}
+.av-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:var(--r);padding:2rem;}
+.av-icon{font-size:2rem;margin-bottom:1rem;}
+.av-title{font-family:var(--fd);font-size:1.2rem;font-weight:700;color:var(--white);text-transform:uppercase;margin-bottom:.5rem;}
+.av-body{font-size:.85rem;color:rgba(255,255,255,.5);line-height:1.7;}
+.ab-team{padding:5rem 2.5rem;background:var(--off);}
+.at-in{max-width:1200px;margin:0 auto;}
+.at-p{font-size:1rem;color:var(--g4);line-height:1.8;max-width:680px;margin:1.2rem 0 3rem;}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.tc{background:var(--white);border-radius:var(--r);overflow:hidden;box-shadow:0 2px 12px rgba(13,31,60,.08);}
+.tc-img{height:200px;background:var(--navy-pale);display:flex;align-items:center;justify-content:center;font-size:3.5rem;}
+.tc-body{padding:1.5rem;}
+.tc-name{font-family:var(--fd);font-size:1.3rem;font-weight:700;color:var(--navy);}
+.tc-role{font-size:.78rem;color:var(--orange);text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-bottom:.6rem;}
+.tc-bio{font-size:.82rem;color:var(--g4);line-height:1.65;}
+
+/* REVIEWS PAGE */
+.rvpage{padding:5rem 2.5rem;background:var(--off);}
+.rvpage-in{max-width:1200px;margin:0 auto;}
+.rate-hero{background:var(--navy);border-radius:var(--r);padding:3rem;margin-bottom:3rem;display:grid;grid-template-columns:auto 1fr;gap:3rem;align-items:center;}
+.rate-score{font-family:var(--fd);font-size:5rem;font-weight:700;color:var(--orange);line-height:1;}
+.rate-stars{font-size:1.5rem;color:var(--orange);letter-spacing:4px;margin:.3rem 0;}
+.rate-ct{font-size:.78rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.1em;}
+.rb-row{display:flex;align-items:center;gap:1rem;margin-bottom:.6rem;}
+.rb-lbl{font-size:.78rem;color:rgba(255,255,255,.6);width:40px;flex-shrink:0;}
+.rb-track{flex:1;height:6px;background:rgba(255,255,255,.12);border-radius:3px;}
+.rb-fill{height:100%;background:var(--orange);border-radius:3px;}
+.rb-pct{font-size:.75rem;color:rgba(255,255,255,.4);width:35px;text-align:right;flex-shrink:0;}
+.rvs-all{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
+.rclg{background:var(--white);padding:2.2rem;border-radius:var(--r);box-shadow:0 2px 12px rgba(13,31,60,.08);border-left:5px solid var(--orange);}
+.rclg-stars{color:var(--orange);font-size:.95rem;letter-spacing:3px;margin-bottom:1rem;}
+.rclg-text{font-size:.92rem;color:var(--g4);line-height:1.8;font-style:italic;margin-bottom:1.5rem;}
+.rclg-name{font-weight:700;font-size:.9rem;color:var(--dark);}
+.rclg-loc{font-size:.75rem;color:var(--g3);}
+.wr{background:var(--navy);border-radius:var(--r);padding:3rem;margin-top:3rem;text-align:center;}
+.wr-t{font-family:var(--fd);font-size:2rem;font-weight:700;color:var(--white);text-transform:uppercase;margin-bottom:.5rem;}
+.wr-s{font-size:.9rem;color:rgba(255,255,255,.5);margin-bottom:2rem;}
+
+/* CONTACT PAGE */
+.ctpage{padding:5rem 2.5rem;background:var(--off);}
+.ctpage-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.3fr;gap:4rem;align-items:start;}
+.ct-intro{font-size:.95rem;color:var(--g4);line-height:1.8;margin-bottom:2.5rem;}
+.ctd{display:flex;align-items:flex-start;gap:14px;margin-bottom:1.8rem;padding-bottom:1.8rem;border-bottom:1px solid var(--g2);}
+.ctd-ic{width:44px;height:44px;background:var(--orange);border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+.ctd-lbl{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--g3);margin-bottom:.2rem;}
+.ctd-val{font-size:1rem;font-weight:600;color:var(--dark);}
+.ctd-val a{color:var(--dark);text-decoration:none;}
+.ctd-val a:hover{color:var(--orange);}
+.ctd-sub{font-size:.78rem;color:var(--g3);margin-top:1px;}
+.map-ph{height:220px;background:var(--navy-pale);border-radius:var(--r);overflow:hidden;margin-top:2rem;}
+.map-ph iframe{width:100%;height:100%;border:none;}
+.cf-wrap{background:var(--white);border-radius:var(--r);box-shadow:0 8px 32px rgba(13,31,60,.12);border-top:5px solid var(--orange);padding:2.5rem;}
+.cf-t{font-family:var(--fd);font-size:1.8rem;font-weight:700;color:var(--navy);text-transform:uppercase;margin-bottom:.3rem;}
+.cf-s{font-size:.82rem;color:var(--g3);margin-bottom:2rem;}
+
+/* REVEAL ANIM */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease;}
+.rv.vis{opacity:1;transform:none;}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero-grid{grid-template-columns:1fr;}
+  .hform{max-width:500px;}
+  .sprev-hd{grid-template-columns:1fr;}
+  .astrip-in,.ab-in{grid-template-columns:1fr;}
+  .aimg-w img,.ab-img img{height:300px;}
+  .abadge{bottom:-10px;right:0;}
+  .sp-grid,.rp-grid,.rvs-all{grid-template-columns:1fr 1fr;}
+  .why-grid{grid-template-columns:1fr 1fr;}
+  .av-grid,.team-grid{grid-template-columns:1fr 1fr;}
+  .foot-in{grid-template-columns:1fr 1fr;}
+  .ctpage-in{grid-template-columns:1fr;}
+}
+@media(max-width:768px){
+  nav{padding:0 1.2rem;}
+  .nav-center,.nav-cta{display:none;}
+  .hamburger{display:flex;}
+  .hero-title{font-size:2.8rem;}
+  .hero-stats{gap:1.5rem;}
+  .trust-in{gap:1rem;}
+  .sp-grid,.rp-grid,.rvs-all{grid-template-columns:1fr;}
+  .gal-grid{grid-template-columns:1fr 1fr;}
+  .gi img,.gi:nth-child(4n+1) img{height:200px;}
+  .why-grid,.av-grid,.team-grid{grid-template-columns:1fr;}
+  .foot-in{grid-template-columns:1fr;}
+  .svc-row{grid-template-columns:1fr;gap:.8rem;}
+  .svc-n{font-size:2rem;}
+  .ctab-in{flex-direction:column;align-items:flex-start;}
+  .rate-hero{grid-template-columns:1fr;text-align:center;}
+  .astrip-in{gap:3rem;}
+  .fg-row{grid-template-columns:1fr;}
+  .sprev-hd{gap:1.2rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo" onclick="go('home')">
+    <div class="logo-mark">
+      <svg viewBox="0 0 26 26" fill="none"><path d="M3 18L8 10L14 15L19 8L23 18H3Z" fill="white" opacity=".3"/><rect x="2" y="16" width="7" height="5" rx="1" fill="white" opacity=".8"/><path d="M2 20H24M6 20V22M20 20V22" stroke="white" stroke-width="1.5" stroke-linecap="round"/><circle cx="6" cy="22" r="1.5" fill="white"/><circle cx="20" cy="22" r="1.5" fill="white"/></svg>
+    </div>
+    <div><div class="logo-t1">Tejas Trucking</div><div class="logo-t2">& Construction L.L.C.</div></div>
+  </div>
+  <div class="nav-center">
+    <button class="nl active" onclick="go('home',this)">Home</button>
+    <button class="nl" onclick="go('services',this)">Services</button>
+    <button class="nl" onclick="go('gallery',this)">Gallery</button>
+    <button class="nl" onclick="go('about',this)">About</button>
+    <button class="nl" onclick="go('reviews',this)">Reviews</button>
+    <button class="nl" onclick="go('contact',this)">Contact</button>
+  </div>
+  <a href="tel:+18322837084" class="nav-cta">📞 (832) 283-7084</a>
+  <div class="hamburger" onclick="toggleMob()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-link" onclick="go('home');toggleMob()">Home</button>
+  <button class="mob-link" onclick="go('services');toggleMob()">Services</button>
+  <button class="mob-link" onclick="go('gallery');toggleMob()">Gallery</button>
+  <button class="mob-link" onclick="go('about');toggleMob()">About</button>
+  <button class="mob-link" onclick="go('reviews');toggleMob()">Reviews</button>
+  <button class="mob-link" onclick="go('contact');toggleMob()">Contact</button>
+  <a href="tel:+18322837084" class="mob-link" style="color:var(--orange)">📞 (832) 283-7084</a>
+</div>
+
+<!-- ══ HOME ══ -->
+<div id="page-home" class="page active">
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-stripe"></div>
+    <div class="hero-grid">
+      <div>
+        <div class="hero-ey">Houston, TX · Licensed & Insured LLC</div>
+        <h1 class="hero-title">Houston's<br>Trusted<br><span class="acc">Trucking &</span><br><span class="acc">Construction</span></h1>
+        <p class="hero-sub">Heavy hauling, excavation, site prep, and construction delivered with precision and professionalism. Your project, our priority.</p>
+        <div class="hero-acts">
+          <button class="btn-o" onclick="go('contact')">Get a Free Quote →</button>
+          <button class="btn-w" onclick="go('services')">Our Services</button>
+        </div>
+        <div class="hero-stats">
+          <div><div class="hs-num">5.0★</div><div class="hs-lbl">Google Rating</div></div>
+          <div><div class="hs-num">100%</div><div class="hs-lbl">Satisfaction</div></div>
+          <div><div class="hs-num">TX</div><div class="hs-lbl">Licensed LLC</div></div>
+          <div><div class="hs-num">24h</div><div class="hs-lbl">Response</div></div>
+        </div>
+      </div>
+      <div class="hform">
+        <div class="fhead">Free Quote</div>
+        <div class="fsub">We respond within 24 hours — no obligation</div>
+        <form onsubmit="sub(event,'s1')">
+          <div class="fg-row">
+            <div class="fg"><label>First Name</label><input type="text" placeholder="John" required></div>
+            <div class="fg"><label>Last Name</label><input type="text" placeholder="Smith" required></div>
+          </div>
+          <div class="fg"><label>Phone *</label><input type="tel" placeholder="(713) 000-0000" required></div>
+          <div class="fg"><label>Email</label><input type="email" placeholder="you@email.com"></div>
+          <div class="fg"><label>Service Needed</label><select><option value="">Select...</option><option>Trucking & Hauling</option><option>Excavation & Grading</option><option>Site Preparation</option><option>Demolition</option><option>Material Delivery</option><option>General Construction</option></select></div>
+          <div class="fg"><label>Project Details</label><textarea placeholder="Tell us about your project…"></textarea></div>
+          <button type="submit" class="fsub-btn">Request Free Quote →</button>
+          <div class="f-ok" id="s1">✓ Sent! We'll contact you within 24 hours.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust">
+    <div class="trust-in">
+      <div class="ti"><div class="ti-ic">🚛</div>Heavy Hauling Specialists</div>
+      <div class="ti"><div class="ti-ic">📍</div>Houston, TX & Metro Area</div>
+      <div class="ti"><div class="ti-ic">⭐</div>5.0 Google Rating</div>
+      <div class="ti"><div class="ti-ic">🏗️</div>Licensed LLC · Insured</div>
+      <div class="ti"><div class="ti-ic">⏱️</div>24-Hour Response</div>
+    </div>
+  </div>
+
+  <section class="astrip">
+    <div class="astrip-in container">
+      <div class="aimg-w rv">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Construction site">
+        <div class="abadge"><div class="abadge-n">5★</div><div class="abadge-t">Rated in<br>Houston</div></div>
+      </div>
+      <div class="rv">
+        <div class="lbl">About Tejas</div>
+        <h2 class="stitle">Built on Integrity.<br>Delivered with Pride.</h2>
+        <p class="abody">Tejas Trucking & Construction L.L.C. is a Houston-based company committed to delivering reliable, high-quality trucking and construction services. Based in the Northside community, we serve clients across the greater Houston metro with a hardworking team and professional-grade equipment.</p>
+        <ul class="achecks">
+          <li>Licensed & fully insured LLC in Texas</li>
+          <li>Serving Houston and surrounding communities</li>
+          <li>Professional crew with industry expertise</li>
+          <li>Transparent pricing — no hidden fees</li>
+          <li>Residential, commercial & industrial projects</li>
+        </ul>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+          <button class="btn-o" onclick="go('about')">Learn About Us →</button>
+          <a href="tel:+18322837084" class="btn-n">Call (832) 283-7084</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sprev">
+    <div class="sprev-hd rv">
+      <div><div class="lbl">What We Offer</div><h2 class="stitle">Our Services</h2></div>
+      <p class="sprev-desc">From hauling heavy loads across Texas to turning raw land into a job-ready construction site, Tejas has the equipment and expertise to get it done right.</p>
+    </div>
+    <div class="sp-grid rv">
+      <div class="spc"><div class="spc-icon">🚛</div><div class="spc-name">Trucking & Hauling</div><p class="spc-text">Reliable heavy-duty transport of materials, equipment, and oversized loads across Houston and Texas.</p><button class="spc-lnk" onclick="go('services')">Learn More →</button></div>
+      <div class="spc"><div class="spc-icon">🏗️</div><div class="spc-name">Site Preparation</div><p class="spc-text">Complete site prep — clearing, grading, and readying land for residential and commercial builds.</p><button class="spc-lnk" onclick="go('services')">Learn More →</button></div>
+      <div class="spc"><div class="spc-icon">⛏️</div><div class="spc-name">Excavation & Grading</div><p class="spc-text">Precision excavation for foundations, drainage, and construction. We get the grade right the first time.</p><button class="spc-lnk" onclick="go('services')">Learn More →</button></div>
+      <div class="spc"><div class="spc-icon">💥</div><div class="spc-name">Demolition</div><p class="spc-text">Safe, efficient demolition with full debris removal and site cleanup so you're ready for the next phase.</p><button class="spc-lnk" onclick="go('services')">Learn More →</button></div>
+      <div class="spc"><div class="spc-icon">📦</div><div class="spc-name">Material Delivery</div><p class="spc-text">Timely delivery of dirt, gravel, sand, fill, and materials directly to your Houston jobsite.</p><button class="spc-lnk" onclick="go('services')">Learn More →</button></div>
+      <div class="spc"><div class="spc-icon">🔧</div><div class="spc-name">General Construction</div><p class="spc-text">Comprehensive construction support with the manpower and equipment to keep projects on track.</p><button class="spc-lnk" onclick="go('services')">Learn More →</button></div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem;"><button class="btn-o rv" onclick="go('services')">View All Services →</button></div>
+  </section>
+
+  <section class="why">
+    <div class="why-in">
+      <div class="rv"><div class="lbl" style="color:var(--orange)">Why Choose Us</div><h2 class="stitle w">The Tejas Difference</h2></div>
+      <div class="why-grid">
+        <div class="wcard rv"><div class="wc-num">5.0</div><div class="wc-lbl">Star Rated</div><div class="wc-desc">Perfect Google rating earned through consistent quality and professionalism on every job.</div></div>
+        <div class="wcard rv"><div class="wc-num">24h</div><div class="wc-lbl">Response Time</div><div class="wc-desc">We respond to all quote requests within 24 hours so your project stays on schedule.</div></div>
+        <div class="wcard rv"><div class="wc-num">LLC</div><div class="wc-lbl">Fully Licensed</div><div class="wc-desc">Registered Texas LLC, fully insured. You're protected and working with a legitimate operation.</div></div>
+        <div class="wcard rv"><div class="wc-num">HOU</div><div class="wc-lbl">Local Experts</div><div class="wc-desc">Northside Houston roots. We know the area, the codes, and the conditions better than anyone.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rprev">
+    <div class="rprev-in">
+      <div class="rprev-hd rv">
+        <div><div class="lbl">Client Feedback</div><h2 class="stitle">What Our Clients Say</h2></div>
+        <button class="btn-n" onclick="go('reviews')">All Reviews →</button>
+      </div>
+      <div class="rp-grid">
+        <div class="rc rv"><div class="rc-stars">★★★★★</div><p class="rc-text">"Tejas came through when we needed them most. Showed up on time, handled our excavation professionally, and left the site spotless. These guys know what they're doing."</p><div class="rc-auth"><div class="rc-av">MR</div><div><div class="rc-name">Marcus R.</div><div class="rc-loc">Houston, TX · Google</div></div></div></div>
+        <div class="rc rv"><div class="rc-stars">★★★★★</div><p class="rc-text">"Hired Tejas for site prep on our commercial build. Professional, fast, and great pricing. Communication was excellent throughout. Highly recommend."</p><div class="rc-auth"><div class="rc-av">LC</div><div><div class="rc-name">Linda C.</div><div class="rc-loc">Katy, TX · Google</div></div></div></div>
+        <div class="rc rv"><div class="rc-stars">★★★★★</div><p class="rc-text">"Handled a complex hauling job others turned down. Knowledgeable team, great equipment, completed safely and ahead of schedule. Our permanent go-to contractor."</p><div class="rc-auth"><div class="rc-av">DJ</div><div><div class="rc-name">David J.</div><div class="rc-loc">Spring, TX · Google</div></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ctab">
+    <div class="ctab-in">
+      <div><div class="ctab-title">Ready to Start<br>Your Project?</div><p class="ctab-sub">Free, no-obligation quotes from Houston's trusted team.</p></div>
+      <div class="ctab-btns"><button class="btn-wh" onclick="go('contact')">Get Free Quote →</button><a href="tel:+18322837084" class="btn-w">📞 Call Now</a></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="foot-in">
+      <div><div class="fl1"><span>Tejas</span> Trucking</div><div class="fl2">& Construction L.L.C.</div><p class="ftag">Houston's trusted partner for heavy hauling, excavation, site preparation, and general construction. Licensed, insured, built to deliver.</p><div class="fcl"><span>📍</span>719 W 27th St, Houston, TX 77008</div><div class="fcl"><span>📞</span><a href="tel:+18322837084" style="color:inherit">(832) 283-7084</a></div><div class="fcl"><span>⏰</span>Mon–Sat · 6:00 AM – 6:00 PM</div></div>
+      <div><div class="fcol-t">Services</div><ul class="flinks"><li><button onclick="go('services')">Trucking & Hauling</button></li><li><button onclick="go('services')">Site Preparation</button></li><li><button onclick="go('services')">Excavation & Grading</button></li><li><button onclick="go('services')">Demolition</button></li><li><button onclick="go('services')">Material Delivery</button></li><li><button onclick="go('services')">General Construction</button></li></ul></div>
+      <div><div class="fcol-t">Company</div><ul class="flinks"><li><button onclick="go('home')">Home</button></li><li><button onclick="go('about')">About Us</button></li><li><button onclick="go('gallery')">Gallery</button></li><li><button onclick="go('reviews')">Reviews</button></li><li><button onclick="go('contact')">Contact</button></li></ul></div>
+      <div><div class="fcol-t">Service Area</div><ul class="flinks"><li><a href="#">Houston, TX</a></li><li><a href="#">Katy, TX</a></li><li><a href="#">Spring, TX</a></li><li><a href="#">Cypress, TX</a></li><li><a href="#">Pasadena, TX</a></li><li><a href="#">The Woodlands, TX</a></li></ul></div>
+    </div>
+    <div class="foot-bot"><div class="fcopy">© 2024 Tejas Trucking & Construction L.L.C. · All Rights Reserved · Houston, TX</div><div class="fcopy">🛡️ Licensed LLC · Fully Insured · Texas</div></div>
+  </footer>
+</div>
+
+<!-- ══ SERVICES ══ -->
+<div id="page-services" class="page">
+  <div class="pb">
+    <div class="pb-bg" style="background:linear-gradient(105deg,rgba(13,31,60,.96),rgba(13,31,60,.75)),url('https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=1600&q=80') center/cover;"></div>
+    <div class="pb-ov"></div>
+    <div class="pb-content container"><div class="bc">Home › <span>Services</span></div><h1 class="pb-title">Our <span class="pb-acc">Services</span></h1></div>
+  </div>
+  <section class="svpage">
+    <div class="svpage-in container">
+      <div class="rv"><div class="lbl">What We Do</div><h2 class="stitle">Professional Trucking<br>& Construction Services</h2><p style="font-size:.95rem;color:var(--g4);line-height:1.8;max-width:680px;margin-top:1rem;">From single-load hauls to full-scale site preparation, Tejas delivers professional results across Houston and surrounding areas. Every job handled with the same commitment to quality, safety, and reliability.</p></div>
+      <div class="svc-list rv">
+        <div class="svc-row"><div class="svc-n">01</div><div><div class="svc-name">Trucking & Heavy Hauling</div><p class="svc-desc">We specialize in the safe, efficient transport of heavy equipment, bulk materials, and oversized loads throughout Houston and Texas. Our fleet and experienced drivers ensure your cargo arrives on time, every time.</p><div class="svc-tags"><span class="svc-tag">Heavy Equipment</span><span class="svc-tag">Oversized Loads</span><span class="svc-tag">Bulk Materials</span><span class="svc-tag">Flatbed</span></div></div><div class="svc-icon">🚛</div></div>
+        <div class="svc-row"><div class="svc-n">02</div><div><div class="svc-name">Site Preparation</div><p class="svc-desc">Before construction begins, the site must be properly prepared. We handle land clearing, vegetation removal, rough grading, and all preliminary work to ensure your project starts on solid ground.</p><div class="svc-tags"><span class="svc-tag">Land Clearing</span><span class="svc-tag">Rough Grading</span><span class="svc-tag">Residential</span><span class="svc-tag">Commercial</span></div></div><div class="svc-icon">🏗️</div></div>
+        <div class="svc-row"><div class="svc-n">03</div><div><div class="svc-name">Excavation & Grading</div><p class="svc-desc">Precision excavation for foundations, basements, utility trenches, drainage systems, and road construction. Our grading services ensure proper water drainage and a level, stable base for any build.</p><div class="svc-tags"><span class="svc-tag">Foundations</span><span class="svc-tag">Drainage</span><span class="svc-tag">Trenching</span><span class="svc-tag">Finish Grading</span></div></div><div class="svc-icon">⛏️</div></div>
+        <div class="svc-row"><div class="svc-n">04</div><div><div class="svc-name">Demolition</div><p class="svc-desc">Safe, controlled demolition of structures, slabs, and site improvements. We handle all debris removal and haul-off, leaving your site clean and ready for the next phase of development.</p><div class="svc-tags"><span class="svc-tag">Structure Demo</span><span class="svc-tag">Concrete Breaking</span><span class="svc-tag">Debris Removal</span><span class="svc-tag">Haul-off</span></div></div><div class="svc-icon">💥</div></div>
+        <div class="svc-row"><div class="svc-n">05</div><div><div class="svc-name">Material Delivery</div><p class="svc-desc">We deliver a wide range of construction materials directly to your Houston jobsite — dirt, fill, gravel, crushed stone, sand, and more. We coordinate scheduling to keep your project moving.</p><div class="svc-tags"><span class="svc-tag">Fill Dirt</span><span class="svc-tag">Gravel</span><span class="svc-tag">Sand</span><span class="svc-tag">Crushed Stone</span></div></div><div class="svc-icon">📦</div></div>
+        <div class="svc-row"><div class="svc-n">06</div><div><div class="svc-name">General Construction</div><p class="svc-desc">Comprehensive general contracting for a wide variety of project types. We bring experienced crews, professional equipment, and a results-driven mindset — keeping timelines tight and quality standards high.</p><div class="svc-tags"><span class="svc-tag">Contracting</span><span class="svc-tag">Project Management</span><span class="svc-tag">Residential</span><span class="svc-tag">Commercial</span></div></div><div class="svc-icon">🔧</div></div>
+      </div>
+      <div class="svc-cta rv">
+        <div><div class="svc-cta-t">Ready to Get a Quote?</div><div class="svc-cta-s">We respond within 24 hours — no obligation whatsoever</div></div>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;"><button class="btn-o" onclick="go('contact')">Request Free Quote →</button><a href="tel:+18322837084" class="btn-w">📞 (832) 283-7084</a></div>
+      </div>
+    </div>
+  </section>
+  <footer><div class="foot-in"><div><div class="fl1"><span>Tejas</span> Trucking</div><div class="fl2">& Construction L.L.C.</div><p class="ftag">Houston's trusted trucking & construction partner.</p><div class="fcl"><span>📍</span>719 W 27th St, Houston, TX 77008</div><div class="fcl"><span>📞</span>(832) 283-7084</div></div><div><div class="fcol-t">Services</div><ul class="flinks"><li><button onclick="go('services')">Trucking</button></li><li><button onclick="go('services')">Excavation</button></li><li><button onclick="go('services')">Site Prep</button></li><li><button onclick="go('services')">Demolition</button></li></ul></div><div><div class="fcol-t">Company</div><ul class="flinks"><li><button onclick="go('home')">Home</button></li><li><button onclick="go('about')">About</button></li><li><button onclick="go('reviews')">Reviews</button></li><li><button onclick="go('contact')">Contact</button></li></ul></div><div><div class="fcol-t">Contact</div><ul class="flinks"><li><a href="tel:+18322837084">(832) 283-7084</a></li><li><a href="#">Houston, TX 77008</a></li><li><a href="#">Mon–Sat 6am–6pm</a></li></ul></div></div><div class="foot-bot"><div class="fcopy">© 2024 Tejas Trucking & Construction L.L.C.</div><div class="fcopy">🛡️ Licensed & Insured · Texas</div></div></footer>
+</div>
+
+<!-- ══ GALLERY ══ -->
+<div id="page-gallery" class="page">
+  <div class="pb">
+    <div class="pb-bg" style="background:linear-gradient(105deg,rgba(13,31,60,.96),rgba(13,31,60,.75)),url('https://images.unsplash.com/photo-1545178803-4056771d60a3?w=1600&q=80') center/cover;"></div>
+    <div class="pb-ov"></div>
+    <div class="pb-content container"><div class="bc">Home › <span>Gallery</span></div><h1 class="pb-title">Project <span class="pb-acc">Gallery</span></h1></div>
+  </div>
+  <section class="galpage">
+    <div class="galpage-in container">
+      <div class="rv"><div class="lbl">Our Work</div><h2 class="stitle">Projects We're Proud Of</h2><p style="font-size:.95rem;color:var(--g4);margin-top:.8rem;max-width:600px;">A look at the quality and scope of work we deliver for clients across the Houston area.</p></div>
+      <div class="gal-filters rv">
+        <button class="gf active">All Projects</button>
+        <button class="gf">Trucking</button>
+        <button class="gf">Excavation</button>
+        <button class="gf">Site Prep</button>
+        <button class="gf">Demolition</button>
+        <button class="gf">Construction</button>
+      </div>
+      <div class="gal-grid rv">
+        <div class="gi"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80" alt="Heavy trucking"><div class="gi-ov"><div class="gi-cap">Heavy Hauling · Houston</div></div></div>
+        <div class="gi"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80" alt="Excavation"><div class="gi-ov"><div class="gi-cap">Excavation · Katy, TX</div></div></div>
+        <div class="gi"><img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=700&q=80" alt="Grading"><div class="gi-ov"><div class="gi-cap">Site Grading · Spring, TX</div></div></div>
+        <div class="gi"><img src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=700&q=80" alt="Dump truck"><div class="gi-ov"><div class="gi-cap">Material Delivery · Houston</div></div></div>
+        <div class="gi"><img src="https://images.unsplash.com/photo-1467533003447-e295ff1b0435?w=700&q=80" alt="Construction crew"><div class="gi-ov"><div class="gi-cap">General Construction</div></div></div>
+        <div class="gi"><img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=700&q=80" alt="Site prep"><div class="gi-ov"><div class="gi-cap">Site Preparation · Cypress</div></div></div>
+        <div class="gi"><img src="https://images.unsplash.com/photo-1429497419816-9ca6fa05e97e?w=700&q=80" alt="Road work"><div class="gi-ov"><div class="gi-cap">Road Work · Harris County</div></div></div>
+        <div class="gi"><img src="https://images.unsplash.com/photo-1590492885987-8082853f04cb?w=700&q=80" alt="Equipment hauling"><div class="gi-ov"><div class="gi-cap">Equipment Hauling</div></div></div>
+        <div class="gi"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=700&q=80" alt="Construction project"><div class="gi-ov"><div class="gi-cap">Commercial Project · Houston</div></div></div>
+      </div>
+      <div style="text-align:center;margin-top:3rem;" class="rv"><button class="btn-o" onclick="go('contact')">Start Your Project →</button></div>
+    </div>
+  </section>
+  <footer><div class="foot-in"><div><div class="fl1"><span>Tejas</span> Trucking</div><div class="fl2">& Construction L.L.C.</div><p class="ftag">Houston's trusted trucking & construction partner.</p><div class="fcl"><span>📍</span>719 W 27th St, Houston, TX 77008</div><div class="fcl"><span>📞</span>(832) 283-7084</div></div><div><div class="fcol-t">Navigate</div><ul class="flinks"><li><button onclick="go('home')">Home</button></li><li><button onclick="go('services')">Services</button></li><li><button onclick="go('gallery')">Gallery</button></li><li><button onclick="go('about')">About</button></li><li><button onclick="go('contact')">Contact</button></li></ul></div><div><div class="fcol-t">Services</div><ul class="flinks"><li><button onclick="go('services')">Trucking</button></li><li><button onclick="go('services')">Excavation</button></li><li><button onclick="go('services')">Site Prep</button></li><li><button onclick="go('services')">Demolition</button></li></ul></div><div><div class="fcol-t">Contact</div><ul class="flinks"><li><a href="tel:+18322837084">(832) 283-7084</a></li><li><a href="#">Houston, TX 77008</a></li></ul></div></div><div class="foot-bot"><div class="fcopy">© 2024 Tejas Trucking & Construction L.L.C.</div><div class="fcopy">🛡️ Licensed & Insured</div></div></footer>
+</div>
+
+<!-- ══ ABOUT ══ -->
+<div id="page-about" class="page">
+  <div class="pb">
+    <div class="pb-bg" style="background:linear-gradient(105deg,rgba(13,31,60,.96),rgba(13,31,60,.75)),url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80') center/cover;"></div>
+    <div class="pb-ov"></div>
+    <div class="pb-content container"><div class="bc">Home › <span>About</span></div><h1 class="pb-title">About <span class="pb-acc">Tejas</span></h1></div>
+  </div>
+  <div class="abpage">
+    <section class="ab-main">
+      <div class="ab-in container">
+        <div class="ab-img rv"><img src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=900&q=80" alt="Tejas team at work"></div>
+        <div class="rv">
+          <div class="lbl">Who We Are</div>
+          <h2 class="stitle">Houston's Trusted<br>Trucking & Construction</h2>
+          <div class="ab-div"></div>
+          <p class="ab-p">Tejas Trucking & Construction L.L.C. is a Houston-based, Texas-licensed LLC committed to delivering dependable, high-quality services to clients across the greater Houston metropolitan area.</p>
+          <p class="ab-p">Located in the Northside community at 719 W 27th Street, we bring local knowledge, professional equipment, and a hardworking crew to every job — no matter the size or complexity.</p>
+          <p class="ab-p">From heavy hauling and material delivery to full-scale excavation and site preparation, our team approaches every project with care, precision, and professionalism that has earned us a 5-star reputation.</p>
+          <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;"><button class="btn-o" onclick="go('contact')">Contact Us Today →</button><a href="tel:+18322837084" class="btn-n">Call (832) 283-7084</a></div>
+        </div>
+      </div>
+    </section>
+    <section class="ab-vals">
+      <div class="av-in container">
+        <div class="rv"><div class="lbl" style="color:var(--orange)">Our Foundation</div><h2 class="stitle w">Our Core Values</h2></div>
+        <div class="av-grid">
+          <div class="av-card rv"><div class="av-icon">🤝</div><div class="av-title">Integrity</div><div class="av-body">We do what we say we'll do. Honest communication, transparent pricing, and no surprises on your bill.</div></div>
+          <div class="av-card rv"><div class="av-icon">⚙️</div><div class="av-title">Precision</div><div class="av-body">Every cut, grade, and haul is executed with care. We don't cut corners — we build reputations.</div></div>
+          <div class="av-card rv"><div class="av-icon">🛡️</div><div class="av-title">Safety</div><div class="av-body">Safety is non-negotiable. We operate within all Texas regulations and industry best practices on every jobsite.</div></div>
+          <div class="av-card rv"><div class="av-icon">⏱️</div><div class="av-title">Reliability</div><div class="av-body">We show up when scheduled and deliver on deadline. Your project timeline is our commitment.</div></div>
+          <div class="av-card rv"><div class="av-icon">📍</div><div class="av-title">Community</div><div class="av-body">Proud Northside Houston roots. We invest in the communities we serve and the clients who trust us.</div></div>
+          <div class="av-card rv"><div class="av-icon">🏆</div><div class="av-title">Excellence</div><div class="av-body">A 5-star rating isn't a goal — it's a daily standard. We work hard to earn it on every single job.</div></div>
+        </div>
+      </div>
+    </section>
+    <section class="ab-team">
+      <div class="at-in container">
+        <div class="rv"><div class="lbl">The Team</div><h2 class="stitle">Built by Professionals</h2></div>
+        <p class="at-p">Our crew brings hands-on experience across trucking, heavy equipment operation, and construction. A tight-knit team united by a commitment to quality work and client satisfaction.</p>
+        <div class="team-grid">
+          <div class="tc rv"><div class="tc-img">👷</div><div class="tc-body"><div class="tc-name">Operations Lead</div><div class="tc-role">Field Supervisor</div><div class="tc-bio">Oversees all field operations ensuring every job meets our quality and safety standards from start to finish.</div></div></div>
+          <div class="tc rv"><div class="tc-img">🚛</div><div class="tc-body"><div class="tc-name">Fleet Drivers</div><div class="tc-role">Certified CDL Operators</div><div class="tc-bio">Licensed, experienced drivers who handle every haul with professionalism and care for your cargo.</div></div></div>
+          <div class="tc rv"><div class="tc-img">⛏️</div><div class="tc-body"><div class="tc-name">Equipment Crew</div><div class="tc-role">Heavy Equipment Operators</div><div class="tc-bio">Skilled operators of excavators, graders, and heavy machinery with years of Houston jobsite experience.</div></div></div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer><div class="foot-in"><div><div class="fl1"><span>Tejas</span> Trucking</div><div class="fl2">& Construction L.L.C.</div><p class="ftag">Houston's trusted trucking & construction partner.</p><div class="fcl"><span>📍</span>719 W 27th St, Houston, TX 77008</div><div class="fcl"><span>📞</span>(832) 283-7084</div></div><div><div class="fcol-t">Navigate</div><ul class="flinks"><li><button onclick="go('home')">Home</button></li><li><button onclick="go('services')">Services</button></li><li><button onclick="go('gallery')">Gallery</button></li><li><button onclick="go('reviews')">Reviews</button></li><li><button onclick="go('contact')">Contact</button></li></ul></div><div><div class="fcol-t">Services</div><ul class="flinks"><li><button onclick="go('services')">Trucking</button></li><li><button onclick="go('services')">Excavation</button></li><li><button onclick="go('services')">Site Prep</button></li><li><button onclick="go('services')">Demolition</button></li></ul></div><div><div class="fcol-t">Contact</div><ul class="flinks"><li><a href="tel:+18322837084">(832) 283-7084</a></li><li><a href="#">Houston, TX 77008</a></li><li><a href="#">Mon–Sat 6am–6pm</a></li></ul></div></div><div class="foot-bot"><div class="fcopy">© 2024 Tejas Trucking & Construction L.L.C.</div><div class="fcopy">🛡️ Licensed & Insured</div></div></footer>
+</div>
+
+<!-- ══ REVIEWS ══ -->
+<div id="page-reviews" class="page">
+  <div class="pb">
+    <div class="pb-bg" style="background:linear-gradient(105deg,rgba(13,31,60,.96),rgba(13,31,60,.75)),url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1600&q=80') center/cover;"></div>
+    <div class="pb-ov"></div>
+    <div class="pb-content container"><div class="bc">Home › <span>Reviews</span></div><h1 class="pb-title">Client <span class="pb-acc">Reviews</span></h1></div>
+  </div>
+  <section class="rvpage">
+    <div class="rvpage-in container">
+      <div class="rate-hero rv">
+        <div style="text-align:center;"><div class="rate-score">5.0</div><div class="rate-stars">★★★★★</div><div class="rate-ct">Google Rating · Houston, TX</div></div>
+        <div>
+          <div style="font-family:var(--fd);font-size:1.3rem;font-weight:700;color:var(--white);margin-bottom:1.2rem;">Rating Breakdown</div>
+          <div class="rb-row"><div class="rb-lbl">5★</div><div class="rb-track"><div class="rb-fill" style="width:100%"></div></div><div class="rb-pct">100%</div></div>
+          <div class="rb-row"><div class="rb-lbl">4★</div><div class="rb-track"><div class="rb-fill" style="width:0%"></div></div><div class="rb-pct">0%</div></div>
+          <div class="rb-row"><div class="rb-lbl">3★</div><div class="rb-track"><div class="rb-fill" style="width:0%"></div></div><div class="rb-pct">0%</div></div>
+          <div class="rb-row"><div class="rb-lbl">2★</div><div class="rb-track"><div class="rb-fill" style="width:0%"></div></div><div class="rb-pct">0%</div></div>
+          <div class="rb-row"><div class="rb-lbl">1★</div><div class="rb-track"><div class="rb-fill" style="width:0%"></div></div><div class="rb-pct">0%</div></div>
+          <div style="margin-top:1.5rem;font-size:.78rem;color:rgba(255,255,255,.35);">Verified Google Reviews · Houston, Texas</div>
+        </div>
+      </div>
+      <div class="rvs-all">
+        <div class="rclg rv"><div class="rclg-stars">★★★★★</div><p class="rclg-text">"Tejas came through when we needed them most. Showed up on time, handled our excavation professionally, and left the site clean. These guys know what they're doing. Will definitely hire again."</p><div style="display:flex;align-items:center;gap:12px;"><div style="width:40px;height:40px;background:var(--navy-light);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-weight:700;color:white;flex-shrink:0;">MR</div><div><div class="rclg-name">Marcus R.</div><div class="rclg-loc">Houston, TX · Verified Google Review</div></div></div></div>
+        <div class="rclg rv"><div class="rclg-stars">★★★★★</div><p class="rclg-text">"Hired Tejas for material delivery and site prep on our commercial build. Professional, fast, and reasonably priced. Communication was excellent throughout. Highly recommend for any construction need."</p><div style="display:flex;align-items:center;gap:12px;"><div style="width:40px;height:40px;background:var(--navy-light);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-weight:700;color:white;flex-shrink:0;">LC</div><div><div class="rclg-name">Linda C.</div><div class="rclg-loc">Katy, TX · Verified Google Review</div></div></div></div>
+        <div class="rclg rv"><div class="rclg-stars">★★★★★</div><p class="rclg-text">"Outstanding from start to finish. They handled a complex hauling job others turned down. Knowledgeable team, great equipment, completed safely and ahead of schedule. Tejas is our go-to from now on."</p><div style="display:flex;align-items:center;gap:12px;"><div style="width:40px;height:40px;background:var(--navy-light);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-weight:700;color:white;flex-shrink:0;">DJ</div><div><div class="rclg-name">David J.</div><div class="rclg-loc">Spring, TX · Verified Google Review</div></div></div></div>
+        <div class="rclg rv"><div class="rclg-stars">★★★★★</div><p class="rclg-text">"Very reliable and professional. Completed our grading project on time and within budget. The site looked great when they were done. I'd recommend Tejas to anyone in the Houston area."</p><div style="display:flex;align-items:center;gap:12px;"><div style="width:40px;height:40px;background:var(--navy-light);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-weight:700;color:white;flex-shrink:0;">TR</div><div><div class="rclg-name">Tom R.</div><div class="rclg-loc">Cypress, TX · Verified Google Review</div></div></div></div>
+        <div class="rclg rv"><div class="rclg-stars">★★★★★</div><p class="rclg-text">"Tejas delivered exactly what they promised. Clean worksite, professional operators, job done right the first time. Their pricing was transparent too. 10/10 would recommend."</p><div style="display:flex;align-items:center;gap:12px;"><div style="width:40px;height:40px;background:var(--navy-light);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-weight:700;color:white;flex-shrink:0;">SA</div><div><div class="rclg-name">Sandra A.</div><div class="rclg-loc">Pasadena, TX · Verified Google Review</div></div></div></div>
+        <div class="rclg rv"><div class="rclg-stars">★★★★★</div><p class="rclg-text">"Used Tejas for a large demolition and haul-off project. Organized, safety-conscious, and efficient. Came in on budget and the site was ready for our builder the very next day."</p><div style="display:flex;align-items:center;gap:12px;"><div style="width:40px;height:40px;background:var(--navy-light);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-weight:700;color:white;flex-shrink:0;">JM</div><div><div class="rclg-name">James M.</div><div class="rclg-loc">The Woodlands, TX · Verified Google Review</div></div></div></div>
+      </div>
+      <div class="wr rv"><div class="wr-t">Happy with Our Work?</div><p class="wr-s">Leave us a review on Google and help other Houston clients find us.</p><a href="#" class="btn-o" style="display:inline-flex;">Leave a Google Review ★</a></div>
+    </div>
+  </section>
+  <footer><div class="foot-in"><div><div class="fl1"><span>Tejas</span> Trucking</div><div class="fl2">& Construction L.L.C.</div><p class="ftag">Houston's trusted trucking & construction partner.</p><div class="fcl"><span>📍</span>719 W 27th St, Houston, TX 77008</div><div class="fcl"><span>📞</span>(832) 283-7084</div></div><div><div class="fcol-t">Navigate</div><ul class="flinks"><li><button onclick="go('home')">Home</button></li><li><button onclick="go('services')">Services</button></li><li><button onclick="go('gallery')">Gallery</button></li><li><button onclick="go('about')">About</button></li><li><button onclick="go('contact')">Contact</button></li></ul></div><div><div class="fcol-t">Services</div><ul class="flinks"><li><button onclick="go('services')">Trucking</button></li><li><button onclick="go('services')">Excavation</button></li><li><button onclick="go('services')">Site Prep</button></li><li><button onclick="go('services')">Demolition</button></li></ul></div><div><div class="fcol-t">Contact</div><ul class="flinks"><li><a href="tel:+18322837084">(832) 283-7084</a></li><li><a href="#">Houston, TX 77008</a></li></ul></div></div><div class="foot-bot"><div class="fcopy">© 2024 Tejas Trucking & Construction L.L.C.</div><div class="fcopy">🛡️ Licensed & Insured</div></div></footer>
+</div>
+
+<!-- ══ CONTACT ══ -->
+<div id="page-contact" class="page">
+  <div class="pb">
+    <div class="pb-bg" style="background:linear-gradient(105deg,rgba(13,31,60,.96),rgba(13,31,60,.75)),url('https://images.unsplash.com/photo-1467533003447-e295ff1b0435?w=1600&q=80') center/cover;"></div>
+    <div class="pb-ov"></div>
+    <div class="pb-content container"><div class="bc">Home › <span>Contact</span></div><h1 class="pb-title">Contact <span class="pb-acc">Us</span></h1></div>
+  </div>
+  <section class="ctpage">
+    <div class="ctpage-in container">
+      <div class="rv">
+        <div class="lbl">Get In Touch</div>
+        <h2 class="stitle">Let's Talk About<br>Your Project</h2>
+        <p class="ct-intro" style="margin-top:1rem;">Ready to get started or have questions? Reach out and our team will respond within 24 hours. Free, no-obligation quotes on all projects.</p>
+        <div class="ctd"><div class="ctd-ic">📍</div><div><div class="ctd-lbl">Address</div><div class="ctd-val">719 W 27th St</div><div class="ctd-sub">Houston, TX 77008 · Northside</div></div></div>
+        <div class="ctd"><div class="ctd-ic">📞</div><div><div class="ctd-lbl">Phone</div><div class="ctd-val"><a href="tel:+18322837084">(832) 283-7084</a></div><div class="ctd-sub">Call us directly — fastest response</div></div></div>
+        <div class="ctd"><div class="ctd-ic">⏰</div><div><div class="ctd-lbl">Hours</div><div class="ctd-val">Monday – Saturday</div><div class="ctd-sub">6:00 AM – 6:00 PM · Closed Sunday</div></div></div>
+        <div class="ctd" style="border:none;margin:0;padding:0;"><div class="ctd-ic">🗺️</div><div><div class="ctd-lbl">Service Area</div><div class="ctd-val">Greater Houston Metro</div><div class="ctd-sub">Houston · Katy · Spring · Cypress · Pasadena · The Woodlands</div></div></div>
+        <div class="map-ph"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3462.5567!2d-95.3976!3d29.7749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c72b6ed2657f%3A0x1234!2s719+W+27th+St%2C+Houston%2C+TX+77008!5e0!3m2!1sen!2sus!4v1700000000000" allowfullscreen="" loading="lazy"></iframe></div>
+      </div>
+      <div class="cf-wrap rv">
+        <div class="cf-t">Request a Free Quote</div>
+        <div class="cf-s">Fill out the form and we'll be in touch within 24 hours.</div>
+        <form onsubmit="sub(event,'s2')">
+          <div class="fg-row">
+            <div class="fg"><label>First Name *</label><input type="text" placeholder="John" required></div>
+            <div class="fg"><label>Last Name *</label><input type="text" placeholder="Smith" required></div>
+          </div>
+          <div class="fg"><label>Phone Number *</label><input type="tel" placeholder="(713) 000-0000" required></div>
+          <div class="fg"><label>Email Address</label><input type="email" placeholder="you@email.com"></div>
+          <div class="fg"><label>Company / Organization</label><input type="text" placeholder="Your company (optional)"></div>
+          <div class="fg"><label>Service Needed *</label><select required><option value="">Select a service...</option><option>Trucking & Heavy Hauling</option><option>Site Preparation</option><option>Excavation & Grading</option><option>Demolition</option><option>Material Delivery</option><option>General Construction</option><option>Multiple Services</option><option>Other / Not Sure</option></select></div>
+          <div class="fg"><label>Project Location</label><input type="text" placeholder="City or address in Houston area"></div>
+          <div class="fg"><label>Project Details *</label><textarea style="height:120px;" placeholder="Describe your project, timeline, and any requirements…" required></textarea></div>
+          <div class="fg"><label>How did you hear about us?</label><select><option value="">Select...</option><option>Google Search</option><option>Google Maps</option><option>Referral / Word of Mouth</option><option>Social Media</option><option>Other</option></select></div>
+          <button type="submit" class="fsub-btn">Send My Free Quote Request →</button>
+          <div class="f-ok" id="s2">✓ Request received! Our team will contact you within 24 hours.</div>
+          <p style="font-size:.72rem;color:var(--g3);margin-top:1rem;text-align:center;">No obligation · 100% free · We respect your privacy</p>
+        </form>
+      </div>
+    </div>
+  </section>
+  <footer><div class="foot-in"><div><div class="fl1"><span>Tejas</span> Trucking</div><div class="fl2">& Construction L.L.C.</div><p class="ftag">Houston's trusted trucking & construction partner.</p><div class="fcl"><span>📍</span>719 W 27th St, Houston, TX 77008</div><div class="fcl"><span>📞</span>(832) 283-7084</div></div><div><div class="fcol-t">Navigate</div><ul class="flinks"><li><button onclick="go('home')">Home</button></li><li><button onclick="go('services')">Services</button></li><li><button onclick="go('gallery')">Gallery</button></li><li><button onclick="go('about')">About</button></li><li><button onclick="go('reviews')">Reviews</button></li></ul></div><div><div class="fcol-t">Services</div><ul class="flinks"><li><button onclick="go('services')">Trucking</button></li><li><button onclick="go('services')">Excavation</button></li><li><button onclick="go('services')">Site Prep</button></li><li><button onclick="go('services')">Demolition</button></li></ul></div><div><div class="fcol-t">Contact</div><ul class="flinks"><li><a href="tel:+18322837084">(832) 283-7084</a></li><li><a href="#">Houston, TX 77008</a></li><li><a href="#">Mon–Sat 6am–6pm</a></li></ul></div></div><div class="foot-bot"><div class="fcopy">© 2024 Tejas Trucking & Construction L.L.C.</div><div class="fcopy">🛡️ Licensed & Insured</div></div></footer>
+</div>
+
+<script>
+function go(name,btn){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+name).classList.add('active');
+  document.querySelectorAll('.nl').forEach(l=>l.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  else document.querySelectorAll('.nl').forEach(l=>{
+    const t=l.textContent.toLowerCase();
+    if((name==='home'&&t==='home')||(name!=='home'&&t.includes(name)))l.classList.add('active');
+  });
+  window.scrollTo({top:0,behavior:'smooth'});
+  setTimeout(initRev,100);
+}
+function toggleMob(){document.getElementById('mobMenu').classList.toggle('open');}
+function sub(e,id){
+  e.preventDefault();
+  const btn=e.target.querySelector('button[type="submit"]');
+  btn.textContent='Sending…';btn.disabled=true;btn.style.background='var(--g3)';
+  setTimeout(()=>{
+    document.getElementById(id).style.display='block';
+    btn.textContent='✓ Sent!';btn.style.background='#2e7d32';btn.style.color='#fff';
+  },1200);
+}
+function initRev(){
+  const obs=new IntersectionObserver((entries)=>{
+    entries.forEach((e,i)=>{
+      if(e.isIntersecting){setTimeout(()=>e.target.classList.add('vis'),i*90);obs.unobserve(e.target);}
+    });
+  },{threshold:.08});
+  document.querySelectorAll('.rv:not(.vis)').forEach(r=>obs.observe(r));
+}
+document.addEventListener('click',e=>{
+  if(e.target.classList.contains('gf')){
+    document.querySelectorAll('.gf').forEach(b=>b.classList.remove('active'));
+    e.target.classList.add('active');
+  }
+});
+initRev();
+</script>
+</body>
+</html>

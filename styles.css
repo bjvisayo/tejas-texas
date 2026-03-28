@@ -1188,17 +1188,32 @@ footer { background: var(--navy); padding: 4rem 2.5rem 2rem; }
    ============================================================ */
 
 @media (max-width: 1024px) {
-  .hero-grid         { grid-template-columns: 1fr; }
-  .hform             { max-width: 500px; }
-  .sprev-hd          { grid-template-columns: 1fr; }
-  .astrip-in, .ab-in { grid-template-columns: 1fr; }
-  .aimg-w img, .ab-img img { height: 300px; }
-  .abadge            { bottom: -10px; right: 0; }
-  .sp-grid, .rp-grid, .rvs-all { grid-template-columns: 1fr 1fr; }
-  .why-grid          { grid-template-columns: 1fr 1fr; }
-  .av-grid, .team-grid { grid-template-columns: 1fr 1fr; }
-  .foot-in           { grid-template-columns: 1fr 1fr; }
-  .ctpage-in         { grid-template-columns: 1fr; }
+  /* Hero */
+  .hero-grid              { grid-template-columns: 1fr; gap: 3rem; }
+  .hform                  { max-width: 100%; width: 100%; }
+
+  /* Sections */
+  .sprev-hd               { grid-template-columns: 1fr; gap: 1.5rem; }
+  .astrip-in, .ab-in      { grid-template-columns: 1fr; gap: 3rem; }
+  .aimg-w img, .ab-img img{ height: 300px; }
+  .abadge                 { bottom: -10px; right: 10px; }
+
+  /* Grids → 2 cols */
+  .sp-grid                { grid-template-columns: 1fr 1fr; }
+  .rp-grid                { grid-template-columns: 1fr 1fr; }
+  .rvs-all                { grid-template-columns: 1fr 1fr; }
+  .why-grid               { grid-template-columns: 1fr 1fr; }
+  .av-grid                { grid-template-columns: 1fr 1fr; }
+  .team-grid              { grid-template-columns: 1fr 1fr; }
+
+  /* Footer */
+  .foot-in                { grid-template-columns: 1fr 1fr; gap: 2rem; }
+
+  /* Contact page */
+  .ctpage-in              { grid-template-columns: 1fr; }
+
+  /* Services page */
+  .svc-row                { gap: 1.5rem; }
 }
 
 
@@ -1207,31 +1222,135 @@ footer { background: var(--navy); padding: 4rem 2.5rem 2rem; }
    ============================================================ */
 
 @media (max-width: 768px) {
-  nav             { padding: 0 1.2rem; }
+
+  /* ── NAV ── */
+  nav                     { padding: 0 1.2rem; }
   .nav-center,
-  .nav-cta        { display: none; }
-  .hamburger      { display: flex; }
+  .nav-cta                { display: none; }
+  .hamburger              { display: flex; }
 
-  .hero-title     { font-size: 2.8rem; }
-  .hero-stats     { gap: 1.5rem; }
-  .trust-in       { gap: 1rem; }
-  .fg-row         { grid-template-columns: 1fr; }
+  /* ── GLOBAL SECTION PADDING ── */
+  .astrip,
+  .sprev,
+  .why,
+  .rprev,
+  .ctab,
+  .svpage,
+  .galpage,
+  .ab-main,
+  .ab-vals,
+  .ab-team,
+  .rvpage,
+  .ctpage                 { padding-left: 1.2rem; padding-right: 1.2rem; padding-top: 4rem; padding-bottom: 4rem; }
 
-  .sprev-hd       { gap: 1.2rem; }
-  .sp-grid, .rp-grid, .rvs-all { grid-template-columns: 1fr; }
+  .trust                  { padding-left: 1.2rem; padding-right: 1.2rem; }
 
-  .gal-grid       { grid-template-columns: 1fr 1fr; }
+  footer                  { padding: 3rem 1.2rem 2rem; }
+
+  /* ── CONTAINERS ── */
+  .container              { padding: 0 1.2rem; }
+
+  /* ── HERO ── */
+  .hero-grid              { padding: 3rem 1.2rem; gap: 2.5rem; }
+  .hero-ey                { font-size: .65rem; }
+  .hero-title             { font-size: 2.4rem; line-height: 1; }
+  .hero-sub               { font-size: .95rem; }
+  .hero-acts              { flex-direction: column; }
+  .hero-acts .btn-o,
+  .hero-acts .btn-w       { width: 100%; justify-content: center; }
+  .hero-stats             { gap: 1.2rem; flex-wrap: wrap; }
+  .hs-num                 { font-size: 1.8rem; }
+
+  /* ── QUOTE FORM ── */
+  .hform                  { padding: 1.6rem; }
+  .fg-row                 { grid-template-columns: 1fr; gap: 0; }
+
+  /* ── TRUST BAR ── */
+  .trust-in               { flex-direction: column; align-items: flex-start; gap: .9rem; }
+
+  /* ── ABOUT STRIP ── */
+  .astrip-in              { grid-template-columns: 1fr; gap: 2rem; }
+  .aimg-w img             { height: 240px; }
+  .abadge                 { bottom: 12px; right: 12px; padding: 1rem 1.2rem; }
+  .abadge-n               { font-size: 2rem; }
+
+  /* ── SERVICES PREVIEW ── */
+  .sprev-hd               { grid-template-columns: 1fr; gap: 1rem; }
+  .sp-grid                { grid-template-columns: 1fr; }
+
+  /* ── WHY US ── */
+  .why-grid               { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .wc-num                 { font-size: 2rem; }
+
+  /* ── REVIEWS PREVIEW ── */
+  .rp-grid                { grid-template-columns: 1fr; }
+
+  /* ── CTA BAND ── */
+  .ctab-in                { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+  .ctab-btns              { flex-direction: column; width: 100%; }
+  .ctab-btns .btn-wh,
+  .ctab-btns .btn-w       { width: 100%; justify-content: center; }
+
+  /* ── FOOTER ── */
+  .foot-in                { grid-template-columns: 1fr; gap: 2rem; }
+
+  /* ── PAGE BANNER ── */
+  .pb                     { height: 200px; }
+  .pb-title               { font-size: 2rem; }
+  .pb-content             { padding: 0 1.2rem 1.8rem; }
+
+  /* ── SERVICES PAGE ── */
+  .svpage-in              { padding: 0; }
+  .svc-row                { grid-template-columns: 1fr; gap: .6rem; padding: 1.5rem 1.2rem; }
+  .svc-n                  { font-size: 1.6rem; }
+  .svc-icon               { display: none; }
+  .svc-cta                { padding: 2rem 1.2rem; flex-direction: column; }
+  .svc-cta > div:last-child { flex-direction: column; width: 100%; }
+  .svc-cta .btn-o,
+  .svc-cta .btn-w         { width: 100%; justify-content: center; }
+
+  /* ── GALLERY PAGE ── */
+  .galpage-in             { padding: 0; }
+  .gal-grid               { grid-template-columns: 1fr 1fr; gap: 6px; }
   .gi img,
-  .gi:nth-child(4n+1) img { height: 200px; }
+  .gi:nth-child(4n+1) img { height: 160px; }
+  .gal-filters            { gap: .4rem; }
+  .gf                     { font-size: .7rem; padding: .45rem .9rem; }
 
-  .why-grid, .av-grid, .team-grid { grid-template-columns: 1fr; }
+  /* ── ABOUT PAGE ── */
+  .ab-in                  { grid-template-columns: 1fr; gap: 2rem; }
+  .ab-img img             { height: 260px; }
+  .av-grid                { grid-template-columns: 1fr; gap: 1rem; }
+  .team-grid              { grid-template-columns: 1fr; }
 
-  .foot-in        { grid-template-columns: 1fr; }
+  /* ── REVIEWS PAGE ── */
+  .rate-hero              { grid-template-columns: 1fr; text-align: center; gap: 2rem; padding: 2rem 1.2rem; }
+  .rvs-all                { grid-template-columns: 1fr; }
+  .wr                     { padding: 2rem 1.2rem; }
 
-  .svc-row        { grid-template-columns: 1fr; gap: .8rem; }
-  .svc-n          { font-size: 2rem; }
+  /* ── CONTACT PAGE ── */
+  .ctpage-in              { gap: 2.5rem; }
+  .cf-wrap                { padding: 1.6rem; }
 
-  .ctab-in        { flex-direction: column; align-items: flex-start; }
-  .rate-hero      { grid-template-columns: 1fr; text-align: center; }
-  .astrip-in      { gap: 3rem; }
+  /* ── SECTION TITLES ── */
+  .stitle                 { font-size: clamp(1.6rem, 6vw, 2.4rem); }
+  .pb-title               { font-size: clamp(1.8rem, 6vw, 2.5rem); }
+}
+
+
+/* ============================================================
+   24. RESPONSIVE — SMALL MOBILE (≤420px)
+   ============================================================ */
+
+@media (max-width: 420px) {
+  .hero-title             { font-size: 2rem; }
+  .why-grid               { grid-template-columns: 1fr; }
+  .gal-grid               { grid-template-columns: 1fr; }
+  .gi img,
+  .gi:nth-child(4n+1) img { height: 220px; }
+  .hform                  { padding: 1.2rem; }
+  .ctab-title             { font-size: 1.8rem; }
+  .hero-stats             { gap: 1rem; }
+  .hs-num                 { font-size: 1.6rem; }
+  .hs-lbl                 { font-size: .65rem; }
 }

@@ -20,7 +20,7 @@
 
 /**
  * Navigate to a named page.
- * @param {string} name   - Page identifier: 'home' | 'services' | 'gallery' | 'about' | 'reviews' | 'contact'
+ * @param {string} name       - Page identifier: 'home' | 'services' | 'gallery' | 'about' | 'reviews' | 'contact'
  * @param {HTMLElement} [btn] - The nav button that was clicked (optional, used for active state)
  */
 function go(name, btn) {
@@ -35,23 +35,25 @@ function go(name, btn) {
   document.querySelectorAll('.nl').forEach(l => l.classList.remove('active'));
 
   if (btn) {
-    // Directly mark the clicked button
     btn.classList.add('active');
   } else {
-    // Match by text content when called programmatically (e.g. from a card button)
     document.querySelectorAll('.nl').forEach(l => {
       const text = l.textContent.toLowerCase().trim();
-      const isHome    = name === 'home'    && text === 'home';
-      const isOther   = name !== 'home'    && text.includes(name);
+      const isHome  = name === 'home' && text === 'home';
+      const isOther = name !== 'home' && text.includes(name);
       if (isHome || isOther) l.classList.add('active');
     });
   }
 
-  // Scroll to top
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Always close mobile menu when navigating
+  const mobMenu = document.getElementById('mobMenu');
+  if (mobMenu) mobMenu.classList.remove('open');
 
-  // Re-run reveal after a short delay (new page content now visible)
-  setTimeout(initReveal, 120);
+  // Scroll to top
+  window.scrollTo({ top: 0, behavior: 'instant' });
+
+  // Re-run reveal after DOM has painted the new page
+  requestAnimationFrame(() => setTimeout(initReveal, 80));
 }
 
 

@@ -1354,3 +1354,68 @@ footer { background: var(--navy); padding: 4rem 2.5rem 2rem; }
   .hs-num                 { font-size: 1.6rem; }
   .hs-lbl                 { font-size: .65rem; }
 }
+
+
+/* ============================================================
+   24. SVG ICON STYLES (data-icon elements)
+   ============================================================ */
+
+/* Icon containers — constrain SVG size */
+[data-icon] svg,
+[data-icon] > svg { display: block; width: 100%; height: 100%; }
+
+/* Service preview cards */
+.spc-icon[data-icon] {
+  width: 52px;
+  height: 52px;
+  margin-bottom: 1rem;
+}
+
+/* Services page detail rows */
+.svc-icon[data-icon] {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+}
+
+/* Trust bar icons */
+.ti-ic[data-icon] {
+  width: 34px;
+  height: 34px;
+  padding: 6px;
+}
+
+/* About values */
+.av-icon[data-icon] {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 1rem;
+}
+
+/* Team placeholder images */
+.tc-img[data-icon] {
+  height: 200px;
+  background: var(--navy-pale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+.tc-img[data-icon] svg {
+  width: 80px;
+  height: 80px;
+}
+
+/* Contact detail icons */
+.ctd-ic[data-icon] {
+  width: 44px;
+  height: 44px;
+  background: var(--orange);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  flex-shrink: 0;
+}
+.ctd-ic[data-icon] svg { filter: brightness(0) invert(1); }

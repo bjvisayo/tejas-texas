@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
 
@@ -107,14 +107,14 @@
           <div class="fsub">We respond within 24 hours — no obligation</div>
           <form onsubmit="handleFormSubmit(event,'form-success-hero')">
             <div class="fg-row">
-              <div class="fg"><label>First Name</label><input type="text" placeholder="John" required /></div>
-              <div class="fg"><label>Last Name</label><input type="text" placeholder="Smith" required /></div>
+              <div class="fg"><label>First Name</label><input type="text" name="first_name" placeholder="John" required /></div>
+              <div class="fg"><label>Last Name</label><input type="text" name="last_name" placeholder="Smith" required /></div>
             </div>
-            <div class="fg"><label>Phone *</label><input type="tel" placeholder="(713) 000-0000" required /></div>
-            <div class="fg"><label>Email</label><input type="email" placeholder="you@email.com" /></div>
+            <div class="fg"><label>Phone *</label><input type="tel" name="phone" placeholder="(713) 000-0000" required /></div>
+            <div class="fg"><label>Email</label><input type="email" name="email" placeholder="you@email.com" /></div>
             <div class="fg">
               <label>Service Needed</label>
-              <select>
+              <select name="service">
                 <option value="">Select...</option>
                 <option>Trucking &amp; Hauling</option>
                 <option>Excavation &amp; Grading</option>
@@ -124,7 +124,7 @@
                 <option>General Construction</option>
               </select>
             </div>
-            <div class="fg"><label>Project Details</label><textarea placeholder="Tell us about your project…"></textarea></div>
+            <div class="fg"><label>Project Details</label><textarea name="message" placeholder="Tell us about your project…"></textarea></div>
             <button type="submit" class="fsub-btn">Request Free Quote →</button>
             <div class="f-ok" id="form-success-hero">✓ Sent! We'll contact you within 24 hours.</div>
           </form>
@@ -135,11 +135,11 @@
     <!-- Trust Bar -->
     <div class="trust">
       <div class="trust-in">
-        <div class="ti"><div class="ti-ic">🚛</div>Heavy Hauling Specialists</div>
-        <div class="ti"><div class="ti-ic">📍</div>Houston, TX &amp; Metro Area</div>
-        <div class="ti"><div class="ti-ic">⭐</div>5.0 Google Rating</div>
-        <div class="ti"><div class="ti-ic">🏗️</div>Licensed LLC · Insured</div>
-        <div class="ti"><div class="ti-ic">⏱️</div>24-Hour Response</div>
+        <div class="ti"><div class="ti-ic" data-icon="truck"></div>Heavy Hauling Specialists</div>
+        <div class="ti"><div class="ti-ic" data-icon="location"></div>Houston, TX &amp; Metro Area</div>
+        <div class="ti"><div class="ti-ic" data-icon="star"></div>5.0 Google Rating</div>
+        <div class="ti"><div class="ti-ic" data-icon="shield"></div>Licensed LLC · Insured</div>
+        <div class="ti"><div class="ti-ic" data-icon="clock"></div>24-Hour Response</div>
       </div>
     </div>
 
@@ -190,12 +190,12 @@
         </p>
       </div>
       <div class="sp-grid rv">
-        <div class="spc"><div class="spc-icon">🚛</div><div class="spc-name">Trucking &amp; Hauling</div><p class="spc-text">Reliable heavy-duty transport of materials, equipment, and oversized loads across Houston and Texas.</p><button class="spc-lnk" onclick="go('services')">Learn More →</button></div>
-        <div class="spc"><div class="spc-icon">🏗️</div><div class="spc-name">Site Preparation</div><p class="spc-text">Complete site prep — clearing, grading, and readying land for residential and commercial builds.</p><button class="spc-lnk" onclick="go('services')">Learn More →</button></div>
-        <div class="spc"><div class="spc-icon">⛏️</div><div class="spc-name">Excavation &amp; Grading</div><p class="spc-text">Precision excavation for foundations, drainage, and construction. We get the grade right the first time.</p><button class="spc-lnk" onclick="go('services')">Learn More →</button></div>
-        <div class="spc"><div class="spc-icon">💥</div><div class="spc-name">Demolition</div><p class="spc-text">Safe, efficient demolition with full debris removal and site cleanup so you're ready for the next phase.</p><button class="spc-lnk" onclick="go('services')">Learn More →</button></div>
-        <div class="spc"><div class="spc-icon">📦</div><div class="spc-name">Material Delivery</div><p class="spc-text">Timely delivery of dirt, gravel, sand, fill, and materials directly to your Houston jobsite.</p><button class="spc-lnk" onclick="go('services')">Learn More →</button></div>
-        <div class="spc"><div class="spc-icon">🔧</div><div class="spc-name">General Construction</div><p class="spc-text">Comprehensive construction support with the manpower and equipment to keep projects on track.</p><button class="spc-lnk" onclick="go('services')">Learn More →</button></div>
+        <div class="spc"><div class="spc-icon" data-icon="truck"></div><div class="spc-name">Trucking &amp; Hauling</div><p class="spc-text">Reliable heavy-duty transport of materials, equipment, and oversized loads across Houston and Texas.</p><button class="spc-lnk" onclick="go('services')">Learn More →</button></div>
+        <div class="spc"><div class="spc-icon" data-icon="crane"></div><div class="spc-name">Site Preparation</div><p class="spc-text">Complete site prep — clearing, grading, and readying land for residential and commercial builds.</p><button class="spc-lnk" onclick="go('services')">Learn More →</button></div>
+        <div class="spc"><div class="spc-icon" data-icon="excavator"></div><div class="spc-name">Excavation &amp; Grading</div><p class="spc-text">Precision excavation for foundations, drainage, and construction. We get the grade right the first time.</p><button class="spc-lnk" onclick="go('services')">Learn More →</button></div>
+        <div class="spc"><div class="spc-icon" data-icon="demolition"></div><div class="spc-name">Demolition</div><p class="spc-text">Safe, efficient demolition with full debris removal and site cleanup so you're ready for the next phase.</p><button class="spc-lnk" onclick="go('services')">Learn More →</button></div>
+        <div class="spc"><div class="spc-icon" data-icon="delivery"></div><div class="spc-name">Material Delivery</div><p class="spc-text">Timely delivery of dirt, gravel, sand, fill, and materials directly to your Houston jobsite.</p><button class="spc-lnk" onclick="go('services')">Learn More →</button></div>
+        <div class="spc"><div class="spc-icon" data-icon="construction"></div><div class="spc-name">General Construction</div><p class="spc-text">Comprehensive construction support with the manpower and equipment to keep projects on track.</p><button class="spc-lnk" onclick="go('services')">Learn More →</button></div>
       </div>
       <div style="text-align:center;margin-top:2.5rem;">
         <button class="btn-o rv" onclick="go('services')">View All Services →</button>
@@ -308,7 +308,7 @@
       </div>
       <div class="foot-bot">
         <div class="fcopy">© 2024 Tejas Trucking &amp; Construction L.L.C. · All Rights Reserved · Houston, TX</div>
-        <div class="fcopy">🛡️ Licensed LLC · Fully Insured · Texas</div>
+        <div class="fcopy">&#9646; Licensed LLC · Fully Insured · Texas</div>
       </div>
     </footer>
   </div><!-- /page-home -->
@@ -350,7 +350,7 @@
               <p class="svc-desc">We specialize in the safe, efficient transport of heavy equipment, bulk materials, and oversized loads throughout Houston and Texas. Our fleet and experienced drivers ensure your cargo arrives on time, every time.</p>
               <div class="svc-tags"><span class="svc-tag">Heavy Equipment</span><span class="svc-tag">Oversized Loads</span><span class="svc-tag">Bulk Materials</span><span class="svc-tag">Flatbed</span></div>
             </div>
-            <div class="svc-icon">🚛</div>
+            <div class="svc-icon" data-icon="truck"></div>
           </div>
 
           <div class="svc-row">
@@ -360,7 +360,7 @@
               <p class="svc-desc">Before construction begins, the site must be properly prepared. We handle land clearing, vegetation removal, rough grading, and all preliminary work to ensure your project starts on solid ground.</p>
               <div class="svc-tags"><span class="svc-tag">Land Clearing</span><span class="svc-tag">Rough Grading</span><span class="svc-tag">Residential</span><span class="svc-tag">Commercial</span></div>
             </div>
-            <div class="svc-icon">🏗️</div>
+            <div class="svc-icon" data-icon="crane"></div>
           </div>
 
           <div class="svc-row">
@@ -370,7 +370,7 @@
               <p class="svc-desc">Precision excavation for foundations, basements, utility trenches, drainage systems, and road construction. Our grading services ensure proper water drainage and a level, stable base for any build.</p>
               <div class="svc-tags"><span class="svc-tag">Foundations</span><span class="svc-tag">Drainage</span><span class="svc-tag">Trenching</span><span class="svc-tag">Finish Grading</span></div>
             </div>
-            <div class="svc-icon">⛏️</div>
+            <div class="svc-icon" data-icon="excavator"></div>
           </div>
 
           <div class="svc-row">
@@ -380,7 +380,7 @@
               <p class="svc-desc">Safe, controlled demolition of structures, slabs, and site improvements. We handle all debris removal and haul-off, leaving your site clean and ready for the next phase of development.</p>
               <div class="svc-tags"><span class="svc-tag">Structure Demo</span><span class="svc-tag">Concrete Breaking</span><span class="svc-tag">Debris Removal</span><span class="svc-tag">Haul-off</span></div>
             </div>
-            <div class="svc-icon">💥</div>
+            <div class="svc-icon" data-icon="demolition"></div>
           </div>
 
           <div class="svc-row">
@@ -390,7 +390,7 @@
               <p class="svc-desc">We deliver a wide range of construction materials directly to your Houston jobsite — dirt, fill, gravel, crushed stone, sand, and more. We coordinate scheduling to keep your project moving.</p>
               <div class="svc-tags"><span class="svc-tag">Fill Dirt</span><span class="svc-tag">Gravel</span><span class="svc-tag">Sand</span><span class="svc-tag">Crushed Stone</span></div>
             </div>
-            <div class="svc-icon">📦</div>
+            <div class="svc-icon" data-icon="delivery"></div>
           </div>
 
           <div class="svc-row">
@@ -400,7 +400,7 @@
               <p class="svc-desc">Comprehensive general contracting for a wide variety of project types. We bring experienced crews, professional equipment, and a results-driven mindset — keeping timelines tight and quality standards high.</p>
               <div class="svc-tags"><span class="svc-tag">Contracting</span><span class="svc-tag">Project Management</span><span class="svc-tag">Residential</span><span class="svc-tag">Commercial</span></div>
             </div>
-            <div class="svc-icon">🔧</div>
+            <div class="svc-icon" data-icon="construction"></div>
           </div>
 
         </div><!-- /svc-list -->
@@ -426,7 +426,7 @@
         <div><div class="fcol-t">Company</div><ul class="flinks"><li><button onclick="go('home')">Home</button></li><li><button onclick="go('about')">About</button></li><li><button onclick="go('reviews')">Reviews</button></li><li><button onclick="go('contact')">Contact</button></li></ul></div>
         <div><div class="fcol-t">Contact</div><ul class="flinks"><li><a href="tel:+18322837084">(832) 283-7084</a></li><li><a href="#">Houston, TX 77008</a></li><li><a href="#">Mon–Sat 6am–6pm</a></li></ul></div>
       </div>
-      <div class="foot-bot"><div class="fcopy">© 2024 Tejas Trucking &amp; Construction L.L.C.</div><div class="fcopy">🛡️ Licensed &amp; Insured · Texas</div></div>
+      <div class="foot-bot"><div class="fcopy">© 2024 Tejas Trucking &amp; Construction L.L.C.</div><div class="fcopy">&#9646; Licensed &amp; Insured · Texas</div></div>
     </footer>
   </div><!-- /page-services -->
 
@@ -491,7 +491,7 @@
         <div><div class="fcol-t">Services</div><ul class="flinks"><li><button onclick="go('services')">Trucking</button></li><li><button onclick="go('services')">Excavation</button></li><li><button onclick="go('services')">Site Prep</button></li><li><button onclick="go('services')">Demolition</button></li></ul></div>
         <div><div class="fcol-t">Contact</div><ul class="flinks"><li><a href="tel:+18322837084">(832) 283-7084</a></li><li><a href="#">Houston, TX 77008</a></li></ul></div>
       </div>
-      <div class="foot-bot"><div class="fcopy">© 2024 Tejas Trucking &amp; Construction L.L.C.</div><div class="fcopy">🛡️ Licensed &amp; Insured</div></div>
+      <div class="foot-bot"><div class="fcopy">© 2024 Tejas Trucking &amp; Construction L.L.C.</div><div class="fcopy">&#9646; Licensed &amp; Insured</div></div>
     </footer>
   </div><!-- /page-gallery -->
 
@@ -541,12 +541,12 @@
             <h2 class="stitle w">Our Core Values</h2>
           </div>
           <div class="av-grid">
-            <div class="av-card rv"><div class="av-icon">🤝</div><div class="av-title">Integrity</div><div class="av-body">We do what we say we'll do. Honest communication, transparent pricing, and no surprises on your bill.</div></div>
-            <div class="av-card rv"><div class="av-icon">⚙️</div><div class="av-title">Precision</div><div class="av-body">Every cut, grade, and haul is executed with care. We don't cut corners — we build reputations.</div></div>
-            <div class="av-card rv"><div class="av-icon">🛡️</div><div class="av-title">Safety</div><div class="av-body">Safety is non-negotiable. We operate within all Texas regulations and industry best practices on every jobsite.</div></div>
-            <div class="av-card rv"><div class="av-icon">⏱️</div><div class="av-title">Reliability</div><div class="av-body">We show up when scheduled and deliver on deadline. Your project timeline is our commitment.</div></div>
-            <div class="av-card rv"><div class="av-icon">📍</div><div class="av-title">Community</div><div class="av-body">Proud Northside Houston roots. We invest in the communities we serve and the clients who trust us.</div></div>
-            <div class="av-card rv"><div class="av-icon">🏆</div><div class="av-title">Excellence</div><div class="av-body">A 5-star rating isn't a goal — it's a daily standard. We work hard to earn it on every single job.</div></div>
+            <div class="av-card rv"><div class="av-icon" data-icon="handshake"></div><div class="av-title">Integrity</div><div class="av-body">We do what we say we'll do. Honest communication, transparent pricing, and no surprises on your bill.</div></div>
+            <div class="av-card rv"><div class="av-icon" data-icon="gear"></div><div class="av-title">Precision</div><div class="av-body">Every cut, grade, and haul is executed with care. We don't cut corners — we build reputations.</div></div>
+            <div class="av-card rv"><div class="av-icon" data-icon="safety"></div><div class="av-title">Safety</div><div class="av-body">Safety is non-negotiable. We operate within all Texas regulations and industry best practices on every jobsite.</div></div>
+            <div class="av-card rv"><div class="av-icon" data-icon="reliability"></div><div class="av-title">Reliability</div><div class="av-body">We show up when scheduled and deliver on deadline. Your project timeline is our commitment.</div></div>
+            <div class="av-card rv"><div class="av-icon" data-icon="community"></div><div class="av-title">Community</div><div class="av-body">Proud Northside Houston roots. We invest in the communities we serve and the clients who trust us.</div></div>
+            <div class="av-card rv"><div class="av-icon" data-icon="trophy"></div><div class="av-title">Excellence</div><div class="av-body">A 5-star rating isn't a goal — it's a daily standard. We work hard to earn it on every single job.</div></div>
           </div>
         </div>
       </section>
@@ -560,9 +560,9 @@
           </div>
           <p class="at-p">Our crew brings hands-on experience across trucking, heavy equipment operation, and construction. A tight-knit team united by a commitment to quality work and client satisfaction.</p>
           <div class="team-grid">
-            <div class="tc rv"><div class="tc-img">👷</div><div class="tc-body"><div class="tc-name">Operations Lead</div><div class="tc-role">Field Supervisor</div><div class="tc-bio">Oversees all field operations ensuring every job meets our quality and safety standards from start to finish.</div></div></div>
-            <div class="tc rv"><div class="tc-img">🚛</div><div class="tc-body"><div class="tc-name">Fleet Drivers</div><div class="tc-role">Certified CDL Operators</div><div class="tc-bio">Licensed, experienced drivers who handle every haul with professionalism and care for your cargo.</div></div></div>
-            <div class="tc rv"><div class="tc-img">⛏️</div><div class="tc-body"><div class="tc-name">Equipment Crew</div><div class="tc-role">Heavy Equipment Operators</div><div class="tc-bio">Skilled operators of excavators, graders, and heavy machinery with years of Houston jobsite experience.</div></div></div>
+            <div class="tc rv"><div class="tc-img" data-icon="lead"></div><div class="tc-body"><div class="tc-name">Operations Lead</div><div class="tc-role">Field Supervisor</div><div class="tc-bio">Oversees all field operations ensuring every job meets our quality and safety standards from start to finish.</div></div></div>
+            <div class="tc rv"><div class="tc-img" data-icon="truck"></div><div class="tc-body"><div class="tc-name">Fleet Drivers</div><div class="tc-role">Certified CDL Operators</div><div class="tc-bio">Licensed, experienced drivers who handle every haul with professionalism and care for your cargo.</div></div></div>
+            <div class="tc rv"><div class="tc-img" data-icon="excavator"></div><div class="tc-body"><div class="tc-name">Equipment Crew</div><div class="tc-role">Heavy Equipment Operators</div><div class="tc-bio">Skilled operators of excavators, graders, and heavy machinery with years of Houston jobsite experience.</div></div></div>
           </div>
         </div>
       </section>
@@ -576,7 +576,7 @@
         <div><div class="fcol-t">Services</div><ul class="flinks"><li><button onclick="go('services')">Trucking</button></li><li><button onclick="go('services')">Excavation</button></li><li><button onclick="go('services')">Site Prep</button></li><li><button onclick="go('services')">Demolition</button></li></ul></div>
         <div><div class="fcol-t">Contact</div><ul class="flinks"><li><a href="tel:+18322837084">(832) 283-7084</a></li><li><a href="#">Houston, TX 77008</a></li><li><a href="#">Mon–Sat 6am–6pm</a></li></ul></div>
       </div>
-      <div class="foot-bot"><div class="fcopy">© 2024 Tejas Trucking &amp; Construction L.L.C.</div><div class="fcopy">🛡️ Licensed &amp; Insured</div></div>
+      <div class="foot-bot"><div class="fcopy">© 2024 Tejas Trucking &amp; Construction L.L.C.</div><div class="fcopy">&#9646; Licensed &amp; Insured</div></div>
     </footer>
   </div><!-- /page-about -->
 
@@ -674,7 +674,7 @@
         <div><div class="fcol-t">Services</div><ul class="flinks"><li><button onclick="go('services')">Trucking</button></li><li><button onclick="go('services')">Excavation</button></li><li><button onclick="go('services')">Site Prep</button></li><li><button onclick="go('services')">Demolition</button></li></ul></div>
         <div><div class="fcol-t">Contact</div><ul class="flinks"><li><a href="tel:+18322837084">(832) 283-7084</a></li><li><a href="#">Houston, TX 77008</a></li></ul></div>
       </div>
-      <div class="foot-bot"><div class="fcopy">© 2024 Tejas Trucking &amp; Construction L.L.C.</div><div class="fcopy">🛡️ Licensed &amp; Insured</div></div>
+      <div class="foot-bot"><div class="fcopy">© 2024 Tejas Trucking &amp; Construction L.L.C.</div><div class="fcopy">&#9646; Licensed &amp; Insured</div></div>
     </footer>
   </div><!-- /page-reviews -->
 
@@ -706,7 +706,7 @@
           </p>
 
           <div class="ctd">
-            <div class="ctd-ic">📍</div>
+            <div class="ctd-ic" data-icon="location"></div>
             <div>
               <div class="ctd-lbl">Address</div>
               <div class="ctd-val">719 W 27th St</div>
@@ -715,7 +715,7 @@
           </div>
 
           <div class="ctd">
-            <div class="ctd-ic">📞</div>
+            <div class="ctd-ic" data-icon="phone"></div>
             <div>
               <div class="ctd-lbl">Phone</div>
               <div class="ctd-val"><a href="tel:+18322837084">(832) 283-7084</a></div>
@@ -724,7 +724,7 @@
           </div>
 
           <div class="ctd">
-            <div class="ctd-ic">⏰</div>
+            <div class="ctd-ic" data-icon="clock"></div>
             <div>
               <div class="ctd-lbl">Hours</div>
               <div class="ctd-val">Monday – Saturday</div>
@@ -733,7 +733,7 @@
           </div>
 
           <div class="ctd" style="border:none;margin:0;padding:0;">
-            <div class="ctd-ic">🗺️</div>
+            <div class="ctd-ic" data-icon="map"></div>
             <div>
               <div class="ctd-lbl">Service Area</div>
               <div class="ctd-val">Greater Houston Metro</div>
@@ -742,7 +742,12 @@
           </div>
 
           <div class="map-ph">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3461.8387928869834!2d-95.41376552565426!3d29.81120132958622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c71de1b11893%3A0x871d77981d70c518!2sTejas%20Trucking%20%26%20Construction%20L.L.C.!5e0!3m2!1sen!2sng!4v1774659008637!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3462.5567!2d-95.3976!3d29.7749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c72b6ed2657f%3A0x1234!2s719+W+27th+St%2C+Houston%2C+TX+77008!5e0!3m2!1sen!2sus!4v1700000000000"
+              allowfullscreen=""
+              loading="lazy"
+              title="Tejas Trucking & Construction Location">
+            </iframe>
           </div>
         </div>
 
@@ -757,10 +762,10 @@
             </div>
             <div class="fg"><label>Phone Number *</label><input type="tel" placeholder="(713) 000-0000" required /></div>
             <div class="fg"><label>Email Address</label><input type="email" placeholder="you@email.com" /></div>
-            <div class="fg"><label>Company / Organization</label><input type="text" placeholder="Your company (optional)" /></div>
+            <div class="fg"><label>Company / Organization</label><input type="text" name="company" placeholder="Your company (optional)" /></div>
             <div class="fg">
               <label>Service Needed *</label>
-              <select required>
+              <select name="service" required>
                 <option value="">Select a service...</option>
                 <option>Trucking &amp; Heavy Hauling</option>
                 <option>Site Preparation</option>
@@ -772,14 +777,14 @@
                 <option>Other / Not Sure</option>
               </select>
             </div>
-            <div class="fg"><label>Project Location</label><input type="text" placeholder="City or address in Houston area" /></div>
+            <div class="fg"><label>Project Location</label><input type="text" name="location" placeholder="City or address in Houston area" /</div>
             <div class="fg">
               <label>Project Details *</label>
-              <textarea style="height:120px;" placeholder="Describe your project, timeline, and any requirements…" required></textarea>
+              <textarea name="message" style="height:120px;" placeholder="Describe your project, timeline, and any requirements…" required></textarea>
             </div>
             <div class="fg">
               <label>How did you hear about us?</label>
-              <select>
+              <select name="source">
                 <option value="">Select...</option>
                 <option>Google Search</option>
                 <option>Google Maps</option>
@@ -804,13 +809,14 @@
         <div><div class="fcol-t">Services</div><ul class="flinks"><li><button onclick="go('services')">Trucking</button></li><li><button onclick="go('services')">Excavation</button></li><li><button onclick="go('services')">Site Prep</button></li><li><button onclick="go('services')">Demolition</button></li></ul></div>
         <div><div class="fcol-t">Contact</div><ul class="flinks"><li><a href="tel:+18322837084">(832) 283-7084</a></li><li><a href="#">Houston, TX 77008</a></li><li><a href="#">Mon–Sat 6am–6pm</a></li></ul></div>
       </div>
-      <div class="foot-bot"><div class="fcopy">© 2024 Tejas Trucking &amp; Construction L.L.C.</div><div class="fcopy">🛡️ Licensed &amp; Insured</div></div>
+      <div class="foot-bot"><div class="fcopy">© 2024 Tejas Trucking &amp; Construction L.L.C.</div><div class="fcopy">&#9646; Licensed &amp; Insured</div></div>
     </footer>
   </div><!-- /page-contact -->
 
 
-  <!-- JavaScript -->
-  <script src="main.js"></script>
+  <!-- Icons + JavaScript -->
+  <script src="assets/js/icons.js"></script>
+  <script src="assets/js/main.js"></script>
 
 </body>
 </html>
